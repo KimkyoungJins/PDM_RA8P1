@@ -142,7 +142,8 @@ void pdm0_callback(pdm_callback_args_t * p_args)
                                  g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES);
 
                 // 첫 몇 개 샘플 값 출력 (디버깅용)
-                SEGGER_RTT_printf(0, "   📊 Sample values: [0]=%02x, [1]=%02x, [2]=%02x, [3]=%02x\n",
+                // 데이터 핵사값으로 바꾸어서 출력하기 
+                SEGGER_RTT_printf(0, "   📊 Sample values: [0]=%08x, [1]=%08x, [2]=%08x, [3]=%08x\n",
                                  g_pdm0_buffer[0], g_pdm0_buffer[1], g_pdm0_buffer[2], g_pdm0_buffer[3]);
             }
             else if (g_data_callback_count % 50 == 0)
