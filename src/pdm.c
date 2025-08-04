@@ -40,6 +40,7 @@ void r_pdm_basic_messaging_core0_example(void)
 
     R_BSP_SoftwareDelay(PDM0_FILTER_SETTLING_TIME_US + PDM_MIC_STARTUP_TIME_US, BSP_DELAY_UNITS_MICROSECONDS);
 
+
     SEGGER_RTT_printf(0, "✅ Filter and Mic ready!\n");
 
     /* Enable sound detection (if desired). */
@@ -141,7 +142,7 @@ void pdm0_callback(pdm_callback_args_t * p_args)
                                  g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES);
 
                 // 첫 몇 개 샘플 값 출력 (디버깅용)
-                SEGGER_RTT_printf(0, "   📊 Sample values: [0]=%lu, [1]=%lu, [2]=%lu, [3]=%lu\n",
+                SEGGER_RTT_printf(0, "   📊 Sample values: [0]=%02x, [1]=%02x, [2]=%02x, [3]=%02x\n",
                                  g_pdm0_buffer[0], g_pdm0_buffer[1], g_pdm0_buffer[2], g_pdm0_buffer[3]);
             }
             else if (g_data_callback_count % 50 == 0)
@@ -168,6 +169,7 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             if (p_args->error & PDM_ERROR_OVERVOLTAGE_LOWER)
             {
                 SEGGER_RTT_printf(0, "   ⬇️  UNDER-VOLTAGE detected (below lower limit: 0x%X)\n", PDM_SDE_LOWER_LIMIT);
+                SEGGER_RTT_printf(0, "adsf", PDM_SDE_LOWER_LIMIT);
             }
 
             if (p_args->error & PDM_ERROR_OVERVOLTAGE_UPPER)

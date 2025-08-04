@@ -19,6 +19,9 @@ void hal_entry(void)
 
     /* TODO: add your own code here */
     r_pdm_basic_messaging_core0_example();
+    
+    
+
 
 #if BSP_TZ_SECURE_BUILD
     /* Enter non-secure code */
