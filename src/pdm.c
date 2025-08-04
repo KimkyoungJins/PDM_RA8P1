@@ -77,7 +77,7 @@ void r_pdm_basic_messaging_core0_example(void)
     // 여기서 실제로는 사용자 입력이나 타이머를 기다릴 수 있습니다
     // 예시를 위해 10초 후 자동 종료
     SEGGER_RTT_printf(0, "🕐 Recording for 10 seconds...\n");
-    R_BSP_SoftwareDelay(10000000, BSP_DELAY_UNITS_MICROSECONDS); // 10초
+    R_BSP_SoftwareDelay(10000000, BSP_DELAY_UNITS_MICROSECONDS); // 10초, 수정
 
     SEGGER_RTT_printf(0, "\n================================================\n");
     SEGGER_RTT_printf(0, "🛑 Stopping PDM recording...\n");
