@@ -1,0 +1,1241 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 RAM_START = 0x22000000
+       0        0        0     1 RAM_LENGTH = 0x001d4000
+       0        0        0     1 FLASH_START = 0x02000000
+       0        0        0     1 FLASH_LENGTH = 0x00100000
+       0        0        0     1 DATA_FLASH_START = 0x27000000
+       0        0        0     1 DATA_FLASH_LENGTH = 0x00000000
+       0        0        0     1 SDRAM_START = 0x68000000
+       0        0        0     1 SDRAM_LENGTH = 0x08000000
+       0        0        0     1 OSPI0_CS0_START = 0x80000000
+       0        0        0     1 OSPI0_CS0_LENGTH = 0x10000000
+       0        0        0     1 OSPI0_CS1_START = 0x90000000
+       0        0        0     1 OSPI0_CS1_LENGTH = 0x10000000
+       0        0        0     1 OSPI1_CS0_START = 0x70000000
+       0        0        0     1 OSPI1_CS0_LENGTH = 0x08000000
+       0        0        0     1 OSPI1_CS1_START = 0x78000000
+       0        0        0     1 OSPI1_CS1_LENGTH = 0x08000000
+       0        0        0     1 OPTION_SETTING_OFS0_START = 0x02c9f040
+       0        0        0     1 OPTION_SETTING_OFS0_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS2_START = 0x02c9f044
+       0        0        0     1 OPTION_SETTING_OFS2_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_SAS_START = 0x02c9f074
+       0        0        0     1 OPTION_SETTING_SAS_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS1_START = 0x12c9f4c0
+       0        0        0     1 OPTION_SETTING_OFS1_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS1_SEC_START = 0x02c9f0c0
+       0        0        0     1 OPTION_SETTING_OFS1_SEC_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS1_SEL_START = 0x02c9f120
+       0        0        0     1 OPTION_SETTING_OFS1_SEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS3_START = 0x12c9f4c4
+       0        0        0     1 OPTION_SETTING_OFS3_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS3_SEC_START = 0x02c9f0c4
+       0        0        0     1 OPTION_SETTING_OFS3_SEC_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS3_SEL_START = 0x02c9f124
+       0        0        0     1 OPTION_SETTING_OFS3_SEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BPS_START = 0x12c9f600
+       0        0        0     1 OPTION_SETTING_BPS_LENGTH = 0x00000080
+       0        0        0     1 OPTION_SETTING_BPS_SEC_START = 0x02c9f200
+       0        0        0     1 OPTION_SETTING_BPS_SEC_LENGTH = 0x00000080
+       0        0        0     1 OPTION_SETTING_OTP_PBPS_SEC_START = 0x02e07700
+       0        0        0     1 OPTION_SETTING_OTP_PBPS_SEC_LENGTH = 0x00000080
+       0        0        0     1 OPTION_SETTING_OTP_PBPS_START = 0x12e07780
+       0        0        0     1 OPTION_SETTING_OTP_PBPS_LENGTH = 0x00000080
+       0        0        0     1 ITCM_START = 0x00000000
+       0        0        0     1 ITCM_LENGTH = 0x00020000
+       0        0        0     1 DTCM_START = 0x20000000
+       0        0        0     1 DTCM_LENGTH = 0x00020000
+90000000 90000000        0     1 .ospi0_cs1.startof
+90000000 90000000        0     1         __ddsc_OSPI0_CS1_START = .
+68000000 68000000        0     1 .sdram.startof
+68000000 68000000        0     1         __ddsc_SDRAM_START = .
+68000000 68000000        0     1 __sdram_from_ospi0_cs1$$
+68000000 68000000        0     1         __sdram_from_ospi0_cs1$$Base = .
+68000000 68000000        0     1         __sdram_from_ospi0_cs1$$Load = LOADADDR ( __sdram_from_ospi0_cs1$$ )
+68000000 68000000        0     1         __sdram_from_ospi0_cs1$$Limit = .
+80000000 80000000        0     1 .ospi0_cs0.startof
+80000000 80000000        0     1         __ddsc_OSPI0_CS0_START = .
+80000000 80000000        0     1 __ospi0_cs0_from_ospi0_cs1$$
+80000000 80000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Load = LOADADDR ( __ospi0_cs0_from_ospi0_cs1$$ )
+80000000 80000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Limit = .
+70000000 70000000        0     1 .ospi1_cs0.startof
+70000000 70000000        0     1         __ddsc_OSPI1_CS0_START = .
+70000000 70000000        0     1 __ospi1_cs0_from_ospi0_cs1$$
+70000000 70000000        0     1         __ospi1_cs0_from_ospi0_cs1$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_from_ospi0_cs1$$Load = LOADADDR ( __ospi1_cs0_from_ospi0_cs1$$ )
+70000000 70000000        0     1         __ospi1_cs0_from_ospi0_cs1$$Limit = .
+       0        0        0     1 .itcm.startof
+       0        0        0     1         __ddsc_ITCM_START = .
+       0        0        0     1 __itcm_from_ospi0_cs1$$
+       0        0        0     1         __itcm_from_ospi0_cs1$$Base = .
+       0        0        0     1         __itcm_from_ospi0_cs1$$Load = LOADADDR ( __itcm_from_ospi0_cs1$$ )
+       0        0        0     1         __itcm_from_ospi0_cs1$$Limit = .
+20000000 20000000        0     1 .dtcm.startof
+20000000 20000000        0     1         __ddsc_DTCM_START = .
+20000000 20000000        0     1 __dtcm_from_ospi0_cs1$$
+20000000 20000000        0     1         __dtcm_from_ospi0_cs1$$Base = .
+20000000 20000000        0     1         __dtcm_from_ospi0_cs1$$Load = LOADADDR ( __dtcm_from_ospi0_cs1$$ )
+20000000 20000000        0     1         __dtcm_from_ospi0_cs1$$Limit = .
+22000000 22000000        0     1 .ram.startof
+22000000 22000000        0     1         __ddsc_RAM_START = .
+22000000 22000000        0     1 __ram_dtc_vector$$
+22000000 22000000        0     1         __ram_dtc_vector$$Base = .
+22000000 22000000        0     1         __ram_dtc_vector$$Limit = .
+22000000 22000000        0     1 __ram_from_ospi0_cs1$$
+22000000 22000000        0     1         __ram_from_ospi0_cs1$$Base = .
+22000000 22000000        0     1         __ram_from_ospi0_cs1$$Load = LOADADDR ( __ram_from_ospi0_cs1$$ )
+22000000 22000000        0     1         __ram_from_ospi0_cs1$$Limit = .
+90000000 90000000        0     1 __ospi0_cs1_readonly$$
+90000000 90000000        0     1         __ospi0_cs1_readonly$$Base = .
+90000000 90000000        0     1         __ospi0_cs1_readonly$$Limit = .
+90000000 90000000        0     1 __ospi0_cs1_noinit$$
+90000000 90000000        0     1         __ospi0_cs1_noinit$$Base = .
+90000000 90000000        0     1         __ospi0_cs1_noinit$$Limit = .
+90000000 90000000        0     1 .ospi0_cs1.endof
+90000000 90000000        0     1         __ddsc_OSPI0_CS1_END = .
+78000000 78000000        0     1 .ospi1_cs1.startof
+78000000 78000000        0     1         __ddsc_OSPI1_CS1_START = .
+68000000 68000000        0     1 __sdram_from_ospi1_cs1$$
+68000000 68000000        0     1         __sdram_from_ospi1_cs1$$Base = .
+68000000 68000000        0     1         __sdram_from_ospi1_cs1$$Load = LOADADDR ( __sdram_from_ospi1_cs1$$ )
+68000000 68000000        0     1         __sdram_from_ospi1_cs1$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_from_ospi1_cs1$$
+80000000 80000000        0     1         __ospi0_cs0_from_ospi1_cs1$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_from_ospi1_cs1$$Load = LOADADDR ( __ospi0_cs0_from_ospi1_cs1$$ )
+80000000 80000000        0     1         __ospi0_cs0_from_ospi1_cs1$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_from_ospi1_cs1$$
+70000000 70000000        0     1         __ospi1_cs0_from_ospi1_cs1$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_from_ospi1_cs1$$Load = LOADADDR ( __ospi1_cs0_from_ospi1_cs1$$ )
+70000000 70000000        0     1         __ospi1_cs0_from_ospi1_cs1$$Limit = .
+       0        0        0     1 __itcm_from_ospi1_cs1$$
+       0        0        0     1         __itcm_from_ospi1_cs1$$Base = .
+       0        0        0     1         __itcm_from_ospi1_cs1$$Load = LOADADDR ( __itcm_from_ospi1_cs1$$ )
+       0        0        0     1         __itcm_from_ospi1_cs1$$Limit = .
+20000000 20000000        0     1 __dtcm_from_ospi1_cs1$$
+20000000 20000000        0     1         __dtcm_from_ospi1_cs1$$Base = .
+20000000 20000000        0     1         __dtcm_from_ospi1_cs1$$Load = LOADADDR ( __dtcm_from_ospi1_cs1$$ )
+20000000 20000000        0     1         __dtcm_from_ospi1_cs1$$Limit = .
+22000000 22000000        0     1 __ram_from_ospi1_cs1$$
+22000000 22000000        0     1         __ram_from_ospi1_cs1$$Base = .
+22000000 22000000        0     1         __ram_from_ospi1_cs1$$Load = LOADADDR ( __ram_from_ospi1_cs1$$ )
+22000000 22000000        0     1         __ram_from_ospi1_cs1$$Limit = .
+78000000 78000000        0     1 __ospi1_cs1_readonly$$
+78000000 78000000        0     1         __ospi1_cs1_readonly$$Base = .
+78000000 78000000        0     1         __ospi1_cs1_readonly$$Limit = .
+78000000 78000000        0     1 __ospi1_cs1_noinit$$
+78000000 78000000        0     1         __ospi1_cs1_noinit$$Base = .
+78000000 78000000        0     1         __ospi1_cs1_noinit$$Limit = .
+78000000 78000000        0     1 .ospi1_cs1.endof
+78000000 78000000        0     1         __ddsc_OSPI1_CS1_END = .
+27000000 27000000        0     1 .data_flash.startof
+27000000 27000000        0     1         __ddsc_DATA_FLASH_START = .
+68000000 68000000        0     1 __sdram_from_data_flash$$
+68000000 68000000        0     1         __sdram_from_data_flash$$Base = .
+68000000 68000000        0     1         __sdram_from_data_flash$$Load = LOADADDR ( __sdram_from_data_flash$$ )
+68000000 68000000        0     1         __sdram_from_data_flash$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_from_data_flash$$
+80000000 80000000        0     1         __ospi0_cs0_from_data_flash$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_from_data_flash$$Load = LOADADDR ( __ospi0_cs0_from_data_flash$$ )
+80000000 80000000        0     1         __ospi0_cs0_from_data_flash$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_from_data_flash$$
+70000000 70000000        0     1         __ospi1_cs0_from_data_flash$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_from_data_flash$$Load = LOADADDR ( __ospi1_cs0_from_data_flash$$ )
+70000000 70000000        0     1         __ospi1_cs0_from_data_flash$$Limit = .
+       0        0        0     1 __itcm_from_data_flash$$
+       0        0        0     1         __itcm_from_data_flash$$Base = .
+       0        0        0     1         __itcm_from_data_flash$$Load = LOADADDR ( __itcm_from_data_flash$$ )
+       0        0        0     1         __itcm_from_data_flash$$Limit = .
+20000000 20000000        0     1 __dtcm_from_data_flash$$
+20000000 20000000        0     1         __dtcm_from_data_flash$$Base = .
+20000000 20000000        0     1         __dtcm_from_data_flash$$Load = LOADADDR ( __dtcm_from_data_flash$$ )
+20000000 20000000        0     1         __dtcm_from_data_flash$$Limit = .
+22000000 22000000        0     1 __ram_from_data_flash$$
+22000000 22000000        0     1         __ram_from_data_flash$$Base = .
+22000000 22000000        0     1         __ram_from_data_flash$$Load = LOADADDR ( __ram_from_data_flash$$ )
+22000000 22000000        0     1         __ram_from_data_flash$$Limit = .
+27000000 27000000        0     1 __data_flash_readonly$$
+27000000 27000000        0     1         __data_flash_readonly$$Base = .
+27000000 27000000        0     1         __data_flash_readonly$$Limit = .
+27000000 27000000        0     1 __data_flash_noinit$$
+27000000 27000000        0     1         __data_flash_noinit$$Base = .
+27000000 27000000        0     1         __data_flash_noinit$$Limit = .
+27000000 27000000        0     1 .data_flash.endof
+27000000 27000000        0     1         __ddsc_DATA_FLASH_END = .
+ 2000000  2000000        0     1 .flash.startof
+ 2000000  2000000        0     1         __ddsc_FLASH_START = .
+ 2000000  2000000       48     4 __flash_vectors$$
+ 2000000  2000000        0     1         __flash_vectors$$Base = .
+ 2000000  2000000        0     1         _VECTORS = .
+ 2000000  2000000       40     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.fixed_vectors)
+ 2000000  2000000       40     1                 __Vectors
+ 2000040  2000040        8     4         ./ra_gen/vector_data.o:(.application_vectors)
+ 2000040  2000040        8     1                 g_vector_table
+ 2000048  2000048        0     1         __flash_vectors$$Limit = .
+ 2000048  2000048       18     4 .eh_frame
+ 2000048  2000048       14     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(strlen.S.o):(.eh_frame+0x0)
+ 2000060  2000060        0     1 __flash_noinit$$
+ 2000060  2000060        0     1         __flash_noinit$$Base = .
+ 2000060  2000060        0     1         __flash_noinit$$Limit = .
+68000000 68000000        0     1 __sdram_from_flash$$
+68000000 68000000        0     1         __sdram_from_flash$$Base = .
+68000000 68000000        0     1         __sdram_from_flash$$Load = LOADADDR ( __sdram_from_flash$$ )
+68000000 68000000        0     1         __sdram_from_flash$$Limit = .
+68000000 68000000        0     1 __sdram_noinit_nocache$$
+68000000 68000000        0     1         __sdram_noinit_nocache$$Base = .
+68000000 68000000        0     1         __sdram_noinit_nocache$$Limit = .
+68000000 68000000        0     1 __sdram_zero_nocache$$
+68000000 68000000        0     1         __sdram_zero_nocache$$Base = .
+68000000 68000000        0     1         . = ALIGN ( 32 )
+68000000 68000000        0     1         __sdram_zero_nocache$$Limit = .
+68000000 68000000        0     1 __sdram_noinit$$
+68000000 68000000        0     1         __sdram_noinit$$Base = .
+68000000 68000000        0     1         __sdram_noinit$$Limit = .
+68000000 68000000        0     1 __sdram_zero$$
+68000000 68000000        0     1         __sdram_zero$$Base = .
+68000000 68000000        0     1         __sdram_zero$$Limit = .
+68000000 68000000        0     1 .sdram.endof
+68000000 68000000        0     1         __ddsc_SDRAM_END = .
+80000000 80000000        0     1 __ospi0_cs0_from_flash$$
+80000000 80000000        0     1         __ospi0_cs0_from_flash$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_from_flash$$Load = LOADADDR ( __ospi0_cs0_from_flash$$ )
+80000000 80000000        0     1         __ospi0_cs0_from_flash$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_noinit_nocache$$
+80000000 80000000        0     1         __ospi0_cs0_noinit_nocache$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_noinit_nocache$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_zero_nocache$$
+80000000 80000000        0     1         __ospi0_cs0_zero_nocache$$Base = .
+80000000 80000000        0     1         . = ALIGN ( 32 )
+80000000 80000000        0     1         __ospi0_cs0_zero_nocache$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_noinit$$
+80000000 80000000        0     1         __ospi0_cs0_noinit$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_noinit$$Limit = .
+80000000 80000000        0     1 __ospi0_cs0_zero$$
+80000000 80000000        0     1         __ospi0_cs0_zero$$Base = .
+80000000 80000000        0     1         __ospi0_cs0_zero$$Limit = .
+80000000 80000000        0     1 .ospi0_cs0.endof
+80000000 80000000        0     1         __ddsc_OSPI0_CS0_END = .
+70000000 70000000        0     1 __ospi1_cs0_from_flash$$
+70000000 70000000        0     1         __ospi1_cs0_from_flash$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_from_flash$$Load = LOADADDR ( __ospi1_cs0_from_flash$$ )
+70000000 70000000        0     1         __ospi1_cs0_from_flash$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_noinit_nocache$$
+70000000 70000000        0     1         __ospi1_cs0_noinit_nocache$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_noinit_nocache$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_zero_nocache$$
+70000000 70000000        0     1         __ospi1_cs0_zero_nocache$$Base = .
+70000000 70000000        0     1         . = ALIGN ( 32 )
+70000000 70000000        0     1         __ospi1_cs0_zero_nocache$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_noinit$$
+70000000 70000000        0     1         __ospi1_cs0_noinit$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_noinit$$Limit = .
+70000000 70000000        0     1 __ospi1_cs0_zero$$
+70000000 70000000        0     1         __ospi1_cs0_zero$$Base = .
+70000000 70000000        0     1         __ospi1_cs0_zero$$Limit = .
+70000000 70000000        0     1 .ospi1_cs0.endof
+70000000 70000000        0     1         __ddsc_OSPI1_CS0_END = .
+       0        0        0     1 __itcm_from_flash$$
+       0        0        0     1         __itcm_from_flash$$Base = .
+       0        0        0     1         __itcm_from_flash$$Load = LOADADDR ( __itcm_from_flash$$ )
+       0        0        0     1         __itcm_from_flash$$Limit = .
+       0        0        0     1 __itcm_noinit$$
+       0        0        0     1         __itcm_noinit$$Base = .
+       0        0        0     1         __itcm_noinit$$Limit = .
+       0        0        0     1 __itcm_zero$$
+       0        0        0     1         __itcm_zero$$Base = .
+       0        0        0     1         __itcm_zero$$Limit = .
+       0        0        0     1 .itcm.endof
+       0        0        0     1         __ddsc_ITCM_END = .
+20000000 20000000        0     1 __dtcm_from_flash$$
+20000000 20000000        0     1         __dtcm_from_flash$$Base = .
+20000000 20000000        0     1         __dtcm_from_flash$$Load = LOADADDR ( __dtcm_from_flash$$ )
+20000000 20000000        0     1         __dtcm_from_flash$$Limit = .
+20000000 20000000        0     1 __dtcm_noinit$$
+20000000 20000000        0     1         __dtcm_noinit$$Base = .
+20000000 20000000        0     1         __dtcm_noinit$$Limit = .
+20000000 20000000        0     1 __dtcm_zero$$
+20000000 20000000        0     1         __dtcm_zero$$Base = .
+20000000 20000000        0     1         __dtcm_zero$$Limit = .
+20000000 20000000        0     1 .dtcm.endof
+20000000 20000000        0     1         __ddsc_DTCM_END = .
+22000000 22000000        0     1 __ram_from_flash$$
+22000000 22000000        0     1         __ram_from_flash$$Base = .
+22000000 22000000        0     1         __ram_from_flash$$Load = LOADADDR ( __ram_from_flash$$ )
+22000000 22000000        0     1         __ram_from_flash$$Limit = .
+22000000 22000000        0     1 __ram_noinit_nocache$$
+22000000 22000000        0     1         __ram_noinit_nocache$$Base = .
+22000000 22000000        0     1         __ram_noinit_nocache$$Limit = .
+22000000 22000000        0     1 __ram_zero_nocache$$
+22000000 22000000        0     1         __ram_zero_nocache$$Base = .
+22000000 22000000        0     1         . = ALIGN ( 32 )
+22000000 22000000        0     1         __ram_zero_nocache$$Limit = .
+22000000 22000000      42c     8 __ram_noinit$$
+22000000 22000000        0     1         __ram_noinit$$Base = .
+22000000 22000000      400     8         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.bss.g_main_stack)
+22000000 22000000      400     1                 g_main_stack
+22000400 22000400       2c     4         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.ram_noinit)
+22000400 22000400       2c     1                 g_clock_freq
+2200042c 2200042c        0     1         __ram_noinit$$Limit = .
+22000430 22000430     1974    16 __ram_zero$$
+22000430 22000430        0     1         __ram_zero$$Base = .
+22000430 22000430       a8     4         ./src/SEGGER_RTT/SEGGER_RTT.o:(.bss._SEGGER_RTT)
+22000430 22000430       a8     1                 _SEGGER_RTT
+220004d8 220004d8      800     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.bss._acUpBuffer)
+220004d8 220004d8      800     1                 _acUpBuffer
+22000cd8 22000cd8       10     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.bss._acDownBuffer)
+22000cd8 22000cd8       10     1                 _acDownBuffer
+22000ce8 22000ce8     1000     4         ./src/pdm.o:(.bss.g_pdm0_buffer)
+22000ce8 22000ce8     1000     1                 g_pdm0_buffer
+22001ce8 22001ce8        4     4         ./src/pdm.o:(.bss.g_sound_detection_count)
+22001ce8 22001ce8        4     1                 g_sound_detection_count
+22001cec 22001cec        4     4         ./src/pdm.o:(.bss.g_data_callback_count)
+22001cec 22001cec        4     1                 g_data_callback_count
+22001cf0 22001cf0        4     4         ./src/pdm.o:(.bss.g_error_count)
+22001cf0 22001cf0        4     1                 g_error_count
+22001cf4 22001cf4        8     4         ./ra_gen/common_data.o:(.bss.g_ioport_ctrl)
+22001cf4 22001cf4        8     1                 g_ioport_ctrl
+22001cfc 22001cfc       2c     4         ./ra_gen/hal_data.o:(.bss.g_pdm0_ctrl)
+22001cfc 22001cfc       2c     1                 g_pdm0_ctrl
+22001d28 22001d28       54     4         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.bss.g_bsp_group_irq_sources)
+22001d28 22001d28       54     1                 g_bsp_group_irq_sources
+22001d7c 22001d7c        4     4         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.bss.g_protect_pfswe_counter)
+22001d7c 22001d7c        4     1                 g_protect_pfswe_counter
+22001d80 22001d80        8     4         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.bss.gp_renesas_isr_context)
+22001d80 22001d80        8     1                 gp_renesas_isr_context
+22001d88 22001d88        8     2         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.bss.g_protect_counters)
+22001d88 22001d88        8     1                 g_protect_counters
+22001d90 22001d90        4     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.bss.SystemCoreClock)
+22001d90 22001d90        4     1                 SystemCoreClock
+22001da0 22001da0        4    16         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.bss)
+22001da0 22001da0        4     1                 __tls
+22001da4 22001da4        0     1         __ram_zero$$Limit = .
+22001da4 22001da4        0     1 __ram_tdata$$
+22001da4 22001da4        0     1         __ram_tdata$$Base = .
+22001da4 22001da4        0     1         __ram_tdata$$Load = LOADADDR ( __ram_tdata$$ )
+22001da4 22001da4        0     1         __ram_tdata$$Limit = .
+22001da4 22001da4        0     1 __ram_tbss$$
+22001da4 22001da4        0     1         __ram_tbss$$Base = .
+22001da4 22001da4        0     1         __ram_tbss$$Limit = .
+22001da8 22001da8        0     1 __ram_thread_stack$$
+22001da8 22001da8        0     1         __ram_thread_stack$$Base = .
+22001da8 22001da8        0     1         __ram_thread_stack$$Limit = .
+22002000 22002000        0     1 .ram.endof
+22002000 22002000        0     1         __ddsc_RAM_END = .
+22002000 22002000        0     1 .ram.flat_nsc
+22002000 22002000        0     1         __sau_ddsc_RAM_NSC = .
+ 2000060  2000060     2f96    16 __flash_readonly$$
+ 2000060  2000060        0     1         __flash_readonly$$Base = .
+ 2000060  2000060      186     2         ./src/SEGGER_RTT/SEGGER_RTT.o:(.text.SEGGER_RTT_WriteNoLock)
+ 2000060  2000060        0     1                 $t.6
+ 2000061  2000061      186     1                 SEGGER_RTT_WriteNoLock
+ 20001e6  20001e6       a6     2         ./src/SEGGER_RTT/SEGGER_RTT.o:(.text.SEGGER_RTT_Write)
+ 20001e6  20001e6        0     1                 $t.8
+ 20001e7  20001e7       a6     1                 SEGGER_RTT_Write
+ 200028c  200028c       78     2         ./src/SEGGER_RTT/SEGGER_RTT.o:(.text.SEGGER_RTT_Init)
+ 200028c  200028c        0     1                 $t.26
+ 200028d  200028d       78     1                 SEGGER_RTT_Init
+ 2000304  2000304      488     4         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.text.SEGGER_RTT_vprintf)
+ 2000304  2000304        0     1                 $t.0
+ 2000305  2000305      488     1                 SEGGER_RTT_vprintf
+ 200039e  200039e        0     1                 $d.1
+ 20003ac  20003ac        0     1                 $t.2
+ 2000462  2000462        0     1                 $d.3
+ 2000484  2000484        0     1                 $t.4
+ 200078c  200078c      180     2         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.text._PrintUnsigned)
+ 200078c  200078c        0     1                 $t.5
+ 200078d  200078d      180     1                 _PrintUnsigned
+ 200090c  200090c       22     2         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.text.SEGGER_RTT_printf)
+ 200090c  200090c        0     1                 $t.6
+ 200090d  200090d       22     1                 SEGGER_RTT_printf
+ 200092e  200092e        4     2         ./src/hal_entry.o:(.text.hal_entry)
+ 200092e  200092e        0     1                 $t.0
+ 200092f  200092f        4     1                 hal_entry
+ 2000932  2000932       1a     2         ./src/hal_entry.o:(.text.R_BSP_WarmStart)
+ 2000932  2000932        0     1                 $t.1
+ 2000933  2000933       1a     1                 R_BSP_WarmStart
+ 200094c  200094c      232     2         ./src/pdm.o:(.text.r_pdm_basic_messaging_core0_example)
+ 200094c  200094c        0     1                 $t.0
+ 200094d  200094d      232     1                 r_pdm_basic_messaging_core0_example
+ 2000b7e  2000b7e      18a     2         ./src/pdm.o:(.text.pdm0_callback)
+ 2000b7e  2000b7e        0     1                 $t.1
+ 2000b7f  2000b7f      18a     1                 pdm0_callback
+ 2000d08  2000d08        c     2         ./ra_gen/main.o:(.text.main)
+ 2000d08  2000d08        0     1                 $t.0
+ 2000d09  2000d09        c     1                 main
+ 2000d14  2000d14      12e     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.R_PDM_Open)
+ 2000d14  2000d14        0     1                 $t.0
+ 2000d15  2000d15      12e     1                 R_PDM_Open
+ 2000e42  2000e42      164     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.R_PDM_Start)
+ 2000e42  2000e42        0     1                 $t.1
+ 2000e43  2000e43      164     1                 R_PDM_Start
+ 2000fa6  2000fa6       5c     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.R_PDM_Stop)
+ 2000fa6  2000fa6        0     1                 $t.2
+ 2000fa7  2000fa7       5c     1                 R_PDM_Stop
+ 2001002  2001002      13c     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.R_PDM_SoundDetectionEnable)
+ 2001002  2001002        0     1                 $t.3
+ 2001003  2001003      13c     1                 R_PDM_SoundDetectionEnable
+ 200113e  200113e       fe     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.R_PDM_Close)
+ 200113e  200113e        0     1                 $t.7
+ 200113f  200113f       fe     1                 R_PDM_Close
+ 200123c  200123c       c4     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.pdm_dat_isr)
+ 200123c  200123c        0     1                 $t.10
+ 200123d  200123d       c4     1                 pdm_dat_isr
+ 2001300  2001300       7c     2         ./ra/fsp/src/r_pdm/r_pdm.o:(.text.pdm_err_isr)
+ 2001300  2001300        0     1                 $t.11
+ 2001301  2001301       7c     1                 pdm_err_isr
+ 200137c  200137c       18     2         ./ra/fsp/src/r_ioport/r_ioport.o:(.text.R_IOPORT_Open)
+ 200137c  200137c        0     1                 $t.0
+ 200137d  200137d       18     1                 R_IOPORT_Open
+ 2001394  2001394       ce     2         ./ra/fsp/src/r_ioport/r_ioport.o:(.text.r_ioport_pins_config)
+ 2001394  2001394        0     1                 $t.13
+ 2001395  2001395       ce     1                 r_ioport_pins_config
+ 2001462  2001462       de     2         ./ra/fsp/src/r_ioport/r_ioport.o:(.text.bsp_vbatt_init)
+ 2001462  2001462        0     1                 $t.14
+ 2001463  2001463       de     1                 bsp_vbatt_init
+ 2001540  2001540       aa     4         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.text.SystemCoreClockUpdate)
+ 2001540  2001540        0     1                 $t.2
+ 2001541  2001541       aa     1                 SystemCoreClockUpdate
+ 200155c  200155c        0     1                 $d.3
+ 2001560  2001560        0     1                 $t.4
+ 20015f0  20015f0      610    16         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.text.bsp_clock_init)
+ 20015f0  20015f0        0     1                 $t.15
+ 20015f1  20015f1      610     1                 bsp_clock_init
+ 200166c  200166c        0     1                 $d.16
+ 2001670  2001670        0     1                 $t.17
+ 20017ec  20017ec        0     1                 $d.18
+ 20017f0  20017f0        0     1                 $t.19
+ 2001878  2001878        0     1                 $d.20
+ 200187c  200187c        0     1                 $t.21
+ 2001be0  2001be0        0     1                 $d.22
+ 2001c00  2001c00        2     2         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.text.R_BSP_SubClockStabilizeWaitAfterReset)
+ 2001c00  2001c00        0     1                 $t.25
+ 2001c01  2001c01        2     1                 R_BSP_SubClockStabilizeWaitAfterReset
+ 2001c02  2001c02       80     2         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.text.R_BSP_Init_RTC)
+ 2001c02  2001c02        0     1                 $t.27
+ 2001c03  2001c03       80     1                 R_BSP_Init_RTC
+ 2001c82  2001c82       7c     2         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.text.R_BSP_SoftwareDelay)
+ 2001c82  2001c82        0     1                 $t.0
+ 2001c83  2001c83       7c     1                 R_BSP_SoftwareDelay
+ 2001d00  2001d00        8     8         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.text.bsp_prv_software_delay_loop)
+ 2001d00  2001d00        0     1                 sw_delay_loop
+ 2001d00  2001d00        0     1                 $t.1
+ 2001d01  2001d01        8     1                 bsp_prv_software_delay_loop
+ 2001d08  2001d08       56     2         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.text.NMI_Handler)
+ 2001d08  2001d08        0     1                 $t.1
+ 2001d09  2001d09       56     1                 NMI_Handler
+ 2001d5e  2001d5e       2e     2         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.text.bsp_irq_cfg)
+ 2001d5e  2001d5e        0     1                 $t.0
+ 2001d5f  2001d5f       2e     1                 bsp_irq_cfg
+ 2001d8c  2001d8c       54     2         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.text.R_BSP_RegisterProtectEnable)
+ 2001d8c  2001d8c        0     1                 $t.0
+ 2001d8d  2001d8d       54     1                 R_BSP_RegisterProtectEnable
+ 2001de0  2001de0       4e     2         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.text.R_BSP_RegisterProtectDisable)
+ 2001de0  2001de0        0     1                 $t.1
+ 2001de1  2001de1       4e     1                 R_BSP_RegisterProtectDisable
+ 2001e2e  2001e2e        e     2         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.text.Reset_Handler)
+ 2001e2e  2001e2e        0     1                 $t.0
+ 2001e2f  2001e2f        e     1                 Reset_Handler
+ 2001e3c  2001e3c        4     2         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.text.Default_Handler)
+ 2001e3c  2001e3c        0     1                 $t.1
+ 2001e3d  2001e3d        4     1                 Default_Handler
+ 2001e3d  2001e3d        4     1                 HardFault_Handler
+ 2001e3d  2001e3d        4     1                 MemManage_Handler
+ 2001e3d  2001e3d        4     1                 BusFault_Handler
+ 2001e3d  2001e3d        4     1                 UsageFault_Handler
+ 2001e3d  2001e3d        4     1                 SecureFault_Handler
+ 2001e3d  2001e3d        4     1                 SVC_Handler
+ 2001e3d  2001e3d        4     1                 DebugMon_Handler
+ 2001e3d  2001e3d        4     1                 PendSV_Handler
+ 2001e3d  2001e3d        4     1                 SysTick_Handler
+ 2001e40  2001e40      2c6     8         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.text.SystemInit)
+ 2001e40  2001e40        0     1                 $t.0
+ 2001e41  2001e41      2c6     1                 SystemInit
+ 2001f20  2001f20        0     1                 memset_64_loop_start_0
+ 2001f28  2001f28        0     1                 memset_64_loop_end_0
+ 2001f30  2001f30        0     1                 memset_64_loop_start_1
+ 2001f38  2001f38        0     1                 memset_64_loop_end_1
+ 2002106  2002106        2     2         ./ra/board/ra8p1_ek/board_init.o:(.text.bsp_init)
+ 2002106  2002106        0     1                 $t.0
+ 2002107  2002107        2     1                 bsp_init
+ 2002108  2002108       2c     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.text._init_tls)
+ 2002108  2002108        0     1                 $t.0
+ 2002109  2002109       2c     1                 _init_tls
+ 2002124  2002124        0     1                 $d.1
+ 2002134  2002134       14     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.text._set_tls)
+ 2002134  2002134        0     1                 $t.0
+ 2002135  2002135       14     1                 _set_tls
+ 2002140  2002140        0     1                 $d.1
+ 2002148  2002148        8     2         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.text.bzero)
+ 2002148  2002148        0     1                 $t.0
+ 2002149  2002149        8     1                 bzero
+ 2002149  2002149        8     1                 __aeabi_memclr4
+ 2002149  2002149        8     1                 __aeabi_memclr8
+ 2002149  2002149        8     1                 __aeabi_memclr
+ 2002150  2002150       14     2         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.text.memcpy)
+ 2002150  2002150        0     1                 $t.0
+ 2002151  2002151       14     1                 memcpy
+ 2002151  2002151       14     1                 __aeabi_memcpy4
+ 2002151  2002151       14     1                 __aeabi_memcpy8
+ 2002151  2002151       14     1                 __aeabi_memcpy
+ 2002164  2002164        e     2         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.text.memset)
+ 2002164  2002164        0     1                 $t.0
+ 2002165  2002165        e     1                 memset
+ 2002172  2002172       11     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.rodata._DoInit._aInitStr)
+ 2002172  2002172       11     1                 _DoInit._aInitStr
+ 2002183  2002183      626     1         <internal>:(.rodata.str1.1)
+ 20027a9  20027a9       10     1         <internal>:(.rodata.cst16)
+ 20027bc  20027bc       74     4         ./ra_gen/hal_data.o:(.rodata.g_pdm0_cfg_extend)
+ 20027bc  20027bc       74     1                 g_pdm0_cfg_extend
+ 2002830  2002830       24     4         ./ra_gen/hal_data.o:(.rodata.g_pdm0_cfg)
+ 2002830  2002830       24     1                 g_pdm0_cfg
+ 2002854  2002854      4e8     4         ./ra_gen/pin_data.o:(.rodata.g_bsp_pin_cfg_data)
+ 2002854  2002854      4e8     1                 g_bsp_pin_cfg_data
+ 2002d3c  2002d3c        c     4         ./ra_gen/pin_data.o:(.rodata.g_bsp_pin_cfg)
+ 2002d3c  2002d3c        c     1                 g_bsp_pin_cfg
+ 2002d48  2002d48        4     2         ./ra_gen/vector_data.o:(.rodata.g_interrupt_event_link_select)
+ 2002d48  2002d48        4     1                 g_interrupt_event_link_select
+ 2002d4c  2002d4c        6     2         ./ra/fsp/src/r_ioport/r_ioport.o:(.rodata.g_vbatt_pins_input)
+ 2002d4c  2002d4c        6     1                 g_vbatt_pins_input
+ 2002d54  2002d54       20     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.rodata.nocache_list)
+ 2002d54  2002d54       20     1                 nocache_list
+ 2002d74  2002d74       18     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.rodata.g_init_info)
+ 2002d74  2002d74       18     1                 g_init_info
+ 2002d8c  2002d8c       84     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.rodata.zero_list)
+ 2002d8c  2002d8c       84     1                 zero_list
+ 2002e10  2002e10      190     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.rodata.copy_list)
+ 2002e10  2002e10      190     1                 copy_list
+ 2002fa0  2002fa0        8     2         <internal>:(.rodata.cst8)
+ 2002fa8  2002fa8       4e     4         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.version)
+ 2002fa8  2002fa8        4     1                 g_fsp_version
+ 2002fac  2002fac        6     1                 g_fsp_version_string
+ 2002fb2  2002fb2       44     1                 g_fsp_version_build_string
+ 2002ff6  2002ff6        0     1         __flash_readonly$$Limit = .
+ 2002ff6  2002ff6        0     1 __flash_preinit_array$$
+ 2002ff6  2002ff6        0     1         __preinit_array_start = .
+ 2002ff6  2002ff6        0     1         __preinit_array_end = .
+ 2002ff6  2002ff6        0     1 __flash_init_array$$
+ 2002ff6  2002ff6        0     1         __init_array_start = .
+ 2002ff6  2002ff6        0     1         __init_array_end = .
+ 2002ff6  2002ff6        0     1 __flash_fini_array$$
+ 2002ff6  2002ff6        0     1         __fini_array_start = .
+ 2002ff6  2002ff6        0     1         __fini_array_end = .
+ 2002ff6  2002ff6        0     1 __flash_arm.exidx$$
+ 2002ff6  2002ff6        0     1         __exidx_start = .
+ 2002ff6  2002ff6        0     1         __exidx_end = .
+ 2008000  2008000        0     1 .flash.endof
+ 2008000  2008000        0     1         __ddsc_FLASH_END = .
+ 2008000  2008000        0     1 .flash.flat_nsc
+ 2008000  2008000        0     1         __sau_ddsc_FLASH_NSC = .
+ 2c9f040  2c9f040        0     1 .option_setting_ofs0.startof
+ 2c9f040  2c9f040        0     1         __ddsc_OPTION_SETTING_OFS0_START = .
+ 2c9f040  2c9f040        4     4 __option_setting_ofs0_reg$$
+ 2c9f040  2c9f040        0     1         __option_setting_ofs0_reg$$Base = .
+ 2c9f040  2c9f040        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs0)
+ 2c9f040  2c9f040        4     1                 g_bsp_cfg_option_setting_ofs0
+ 2c9f044  2c9f044        0     1         __option_setting_ofs0_reg$$Limit = .
+ 2c9f044  2c9f044        0     1 .option_setting_ofs0.endof
+ 2c9f044  2c9f044        0     1         __ddsc_OPTION_SETTING_OFS0_END = .
+ 2c9f044  2c9f044        0     1 .option_setting_ofs2.startof
+ 2c9f044  2c9f044        0     1         __ddsc_OPTION_SETTING_OFS2_START = .
+ 2c9f044  2c9f044        4     4 __option_setting_ofs2_reg$$
+ 2c9f044  2c9f044        0     1         __option_setting_ofs2_reg$$Base = .
+ 2c9f044  2c9f044        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs2)
+ 2c9f044  2c9f044        4     1                 g_bsp_cfg_option_setting_ofs2
+ 2c9f048  2c9f048        0     1         __option_setting_ofs2_reg$$Limit = .
+ 2c9f048  2c9f048        0     1 .option_setting_ofs2.endof
+ 2c9f048  2c9f048        0     1         __ddsc_OPTION_SETTING_OFS2_END = .
+ 2c9f074  2c9f074        0     1 .option_setting_sas.startof
+ 2c9f074  2c9f074        0     1         __ddsc_OPTION_SETTING_SAS_START = .
+ 2c9f074  2c9f074        0     1 __option_setting_sas_reg$$
+ 2c9f074  2c9f074        0     1         __option_setting_sas_reg$$Base = .
+ 2c9f074  2c9f074        0     1         __option_setting_sas_reg$$Limit = .
+ 2c9f074  2c9f074        0     1 .option_setting_sas.endof
+ 2c9f074  2c9f074        0     1         __ddsc_OPTION_SETTING_SAS_END = .
+12c9f4c0 12c9f4c0        0     1 .option_setting_ofs1.startof
+12c9f4c0 12c9f4c0        0     1         __ddsc_OPTION_SETTING_OFS1_START = .
+12c9f4c0 12c9f4c0        0     1 __option_setting_ofs1_reg$$
+12c9f4c0 12c9f4c0        0     1         __option_setting_ofs1_reg$$Base = .
+12c9f4c0 12c9f4c0        0     1         __option_setting_ofs1_reg$$Limit = .
+12c9f4c0 12c9f4c0        0     1 .option_setting_ofs1.endof
+12c9f4c0 12c9f4c0        0     1         __ddsc_OPTION_SETTING_OFS1_END = .
+ 2c9f0c0  2c9f0c0        0     1 .option_setting_ofs1_sec.startof
+ 2c9f0c0  2c9f0c0        0     1         __ddsc_OPTION_SETTING_OFS1_SEC_START = .
+ 2c9f0c0  2c9f0c0        4     4 __option_setting_ofs1_sec_reg$$
+ 2c9f0c0  2c9f0c0        0     1         __option_setting_ofs1_sec_reg$$Base = .
+ 2c9f0c0  2c9f0c0        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs1_sec)
+ 2c9f0c0  2c9f0c0        4     1                 g_bsp_cfg_option_setting_ofs1_sec
+ 2c9f0c4  2c9f0c4        0     1         __option_setting_ofs1_sec_reg$$Limit = .
+ 2c9f0c4  2c9f0c4        0     1 .option_setting_ofs1_sec.endof
+ 2c9f0c4  2c9f0c4        0     1         __ddsc_OPTION_SETTING_OFS1_SEC_END = .
+ 2c9f120  2c9f120        0     1 .option_setting_ofs1_sel.startof
+ 2c9f120  2c9f120        0     1         __ddsc_OPTION_SETTING_OFS1_SEL_START = .
+ 2c9f120  2c9f120        4     4 __option_setting_ofs1_sel_reg$$
+ 2c9f120  2c9f120        0     1         __option_setting_ofs1_sel_reg$$Base = .
+ 2c9f120  2c9f120        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs1_sel)
+ 2c9f120  2c9f120        4     1                 g_bsp_cfg_option_setting_ofs1_sel
+ 2c9f124  2c9f124        0     1         __option_setting_ofs1_sel_reg$$Limit = .
+ 2c9f124  2c9f124        0     1 .option_setting_ofs1_sel.endof
+ 2c9f124  2c9f124        0     1         __ddsc_OPTION_SETTING_OFS1_SEL_END = .
+12c9f4c4 12c9f4c4        0     1 .option_setting_ofs3.startof
+12c9f4c4 12c9f4c4        0     1         __ddsc_OPTION_SETTING_OFS3_START = .
+12c9f4c4 12c9f4c4        0     1 __option_setting_ofs3_reg$$
+12c9f4c4 12c9f4c4        0     1         __option_setting_ofs3_reg$$Base = .
+12c9f4c4 12c9f4c4        0     1         __option_setting_ofs3_reg$$Limit = .
+12c9f4c4 12c9f4c4        0     1 .option_setting_ofs3.endof
+12c9f4c4 12c9f4c4        0     1         __ddsc_OPTION_SETTING_OFS3_END = .
+ 2c9f0c4  2c9f0c4        0     1 .option_setting_ofs3_sec.startof
+ 2c9f0c4  2c9f0c4        0     1         __ddsc_OPTION_SETTING_OFS3_SEC_START = .
+ 2c9f0c4  2c9f0c4        4     4 __option_setting_ofs3_sec_reg$$
+ 2c9f0c4  2c9f0c4        0     1         __option_setting_ofs3_sec_reg$$Base = .
+ 2c9f0c4  2c9f0c4        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs3_sec)
+ 2c9f0c4  2c9f0c4        4     1                 g_bsp_cfg_option_setting_ofs3_sec
+ 2c9f0c8  2c9f0c8        0     1         __option_setting_ofs3_sec_reg$$Limit = .
+ 2c9f0c8  2c9f0c8        0     1 .option_setting_ofs3_sec.endof
+ 2c9f0c8  2c9f0c8        0     1         __ddsc_OPTION_SETTING_OFS3_SEC_END = .
+ 2c9f124  2c9f124        0     1 .option_setting_ofs3_sel.startof
+ 2c9f124  2c9f124        0     1         __ddsc_OPTION_SETTING_OFS3_SEL_START = .
+ 2c9f124  2c9f124        4     4 __option_setting_ofs3_sel_reg$$
+ 2c9f124  2c9f124        0     1         __option_setting_ofs3_sel_reg$$Base = .
+ 2c9f124  2c9f124        4     4         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.option_setting_ofs3_sel)
+ 2c9f124  2c9f124        4     1                 g_bsp_cfg_option_setting_ofs3_sel
+ 2c9f128  2c9f128        0     1         __option_setting_ofs3_sel_reg$$Limit = .
+ 2c9f128  2c9f128        0     1 .option_setting_ofs3_sel.endof
+ 2c9f128  2c9f128        0     1         __ddsc_OPTION_SETTING_OFS3_SEL_END = .
+12c9f600 12c9f600        0     1 .option_setting_bps.startof
+12c9f600 12c9f600        0     1         __ddsc_OPTION_SETTING_BPS_START = .
+12c9f600 12c9f600        0     1 __option_setting_bps_reg$$
+12c9f600 12c9f600        0     1         __option_setting_bps_reg$$Base = .
+12c9f600 12c9f600        0     1         __option_setting_bps_reg$$Limit = .
+12c9f600 12c9f600        0     1 .option_setting_bps.endof
+12c9f600 12c9f600        0     1         __ddsc_OPTION_SETTING_BPS_END = .
+ 2c9f200  2c9f200        0     1 .option_setting_bps_sec.startof
+ 2c9f200  2c9f200        0     1         __ddsc_OPTION_SETTING_BPS_SEC_START = .
+ 2c9f200  2c9f200        0     1 __option_setting_bps_sec_reg$$
+ 2c9f200  2c9f200        0     1         __option_setting_bps_sec_reg$$Base = .
+ 2c9f200  2c9f200        0     1         __option_setting_bps_sec_reg$$Limit = .
+ 2c9f200  2c9f200        0     1 .option_setting_bps_sec.endof
+ 2c9f200  2c9f200        0     1         __ddsc_OPTION_SETTING_BPS_SEC_END = .
+ 2e07700  2e07700        0     1 .option_setting_otp_pbps_sec.startof
+ 2e07700  2e07700        0     1         __ddsc_OPTION_SETTING_OTP_PBPS_SEC_START = .
+ 2e07700  2e07700        0     1 __option_setting_otp_pbps_sec_reg$$
+ 2e07700  2e07700        0     1         __option_setting_otp_pbps_sec_reg$$Base = .
+ 2e07700  2e07700        0     1         __option_setting_otp_pbps_sec_reg$$Limit = .
+ 2e07700  2e07700        0     1 .option_setting_otp_pbps_sec.endof
+ 2e07700  2e07700        0     1         __ddsc_OPTION_SETTING_OTP_PBPS_SEC_END = .
+12e07780 12e07780        0     1 .option_setting_otp_pbps.startof
+12e07780 12e07780        0     1         __ddsc_OPTION_SETTING_OTP_PBPS_START = .
+12e07780 12e07780        0     1 __option_setting_otp_pbps_reg$$
+12e07780 12e07780        0     1         __option_setting_otp_pbps_reg$$Base = .
+12e07780 12e07780        0     1         __option_setting_otp_pbps_reg$$Limit = .
+12e07780 12e07780        0     1 .option_setting_otp_pbps.endof
+12e07780 12e07780        0     1         __ddsc_OPTION_SETTING_OTP_PBPS_END = .
+12e07780 12e07780        0     1 PROVIDE ( __tls_base = ADDR ( __ram_tdata$$ ) )
+12e07780 12e07780        0     1 PROVIDE ( __tdata_source = LOADADDR ( __ram_tdata$$ ) )
+12e07780 12e07780        0     1 PROVIDE ( __tdata_size = SIZEOF ( __ram_tdata$$ ) )
+12e07780 12e07780        0     1 PROVIDE ( __tbss_offset = ADDR ( __ram_tbss$$ ) - ADDR ( __ram_tdata$$ ) )
+12e07780 12e07780        0     1 PROVIDE ( __tbss_size = SIZEOF ( __ram_tbss$$ ) )
+12e07780 12e07780        0     1 PROVIDE ( __arm32_tls_tcb_offset = 8 )
+       0        0     358f     1 .debug_loclists
+       0        0     1800     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_loclists)
+    1800     1800      7ec     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_loclists)
+    1fec     1fec       20     1         ./src/hal_entry.o:(.debug_loclists)
+    200c     200c       d6     1         ./src/pdm.o:(.debug_loclists)
+    20e2     20e2      7b3     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_loclists)
+    2895     2895      4ae     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_loclists)
+    2d43     2d43      411     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_loclists)
+    3154     3154       1d     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_loclists)
+    3171     3171      105     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_loclists)
+    3276     3276       35     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_loclists)
+    32ab     32ab       5c     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_loclists)
+    3307     3307       16     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_loclists)
+    331d     331d       55     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_loclists)
+    3372     3372       1e     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_loclists)
+    3390     3390       36     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_loclists)
+    33c6     33c6       cc     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_loclists)
+    3492     3492       2a     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_loclists)
+    34bc     34bc       1b     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_loclists)
+    34d7     34d7       7a     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_loclists)
+    3551     3551       3e     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_loclists)
+       0        0     2999     1 .debug_abbrev
+       0        0      214     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_abbrev)
+     214      214      1e5     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_abbrev)
+     3f9      3f9      119     1         ./src/hal_entry.o:(.debug_abbrev)
+     512      512      190     1         ./src/pdm.o:(.debug_abbrev)
+     6a2      6a2      10d     1         ./ra_gen/common_data.o:(.debug_abbrev)
+     7af      7af      24b     1         ./ra_gen/hal_data.o:(.debug_abbrev)
+     9fa      9fa       3c     1         ./ra_gen/main.o:(.debug_abbrev)
+     a36      a36       e6     1         ./ra_gen/pin_data.o:(.debug_abbrev)
+     b1c      b1c       a8     1         ./ra_gen/vector_data.o:(.debug_abbrev)
+     bc4      bc4      3df     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_abbrev)
+     fa3      fa3      32c     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_abbrev)
+    12cf     12cf       a2     1         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.debug_abbrev)
+    1371     1371      31e     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_abbrev)
+    168f     168f      149     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_abbrev)
+    17d8     17d8       ad     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_abbrev)
+    1885     1885      208     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_abbrev)
+    1a8d     1a8d       44     1         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.debug_abbrev)
+    1ad1     1ad1      1d3     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_abbrev)
+    1ca4     1ca4      17f     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_abbrev)
+    1e23     1e23      216     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_abbrev)
+    2039     2039       67     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_abbrev)
+    20a0     20a0      1c4     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_abbrev)
+    2264     2264       a7     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_abbrev)
+    230b     230b      2bb     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_abbrev)
+    25c6     25c6       43     1         ./ra/board/ra8p1_ek/board_init.o:(.debug_abbrev)
+    2609     2609       91     1         ./ra/board/ra8p1_ek/board_leds.o:(.debug_abbrev)
+    269a     269a       2e     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_errno_errno.c.o):(.debug_abbrev)
+    26c8     26c8       74     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_abbrev)
+    273c     273c       62     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_abbrev)
+    279e     279e       21     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.debug_abbrev)
+    27bf     27bf       94     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_abbrev)
+    2853     2853       a0     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_abbrev)
+    28f3     28f3       85     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_abbrev)
+    2978     2978       21     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(strlen.S.o):(.debug_abbrev)
+       0        0    31161     1 .debug_info
+       0        0     15b1     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_info)
+    15b1     15b1      454     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_info)
+    1a05     1a05      a05     1         ./src/hal_entry.o:(.debug_info)
+    240a     240a      9f8     1         ./src/pdm.o:(.debug_info)
+    2e02     2e02      be2     1         ./ra_gen/common_data.o:(.debug_info)
+    39e4     39e4     16d4     1         ./ra_gen/hal_data.o:(.debug_info)
+    50b8     50b8       37     1         ./ra_gen/main.o:(.debug_info)
+    50ef     50ef      49c     1         ./ra_gen/pin_data.o:(.debug_info)
+    558b     558b      90c     1         ./ra_gen/vector_data.o:(.debug_info)
+    5e97     5e97     3e17     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_info)
+    9cae     9cae     8152     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_info)
+   11e00    11e00      20b     1         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.debug_info)
+   1200b    1200b     7eb0     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_info)
+   19ebb    19ebb      58a     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_info)
+   1a445    1a445      104     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_info)
+   1a549    1a549     11c7     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_info)
+   1b710    1b710       43     1         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.debug_info)
+   1b753    1b753     1611     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_info)
+   1cd64    1cd64     15bd     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_info)
+   1e321    1e321     5294     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_info)
+   235b5    235b5       5f     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_info)
+   23614    23614     6a6d     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_info)
+   2a081    2a081       b1     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_info)
+   2a132    2a132     6a82     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_info)
+   30bb4    30bb4       3b     1         ./ra/board/ra8p1_ek/board_init.o:(.debug_info)
+   30bef    30bef       88     1         ./ra/board/ra8p1_ek/board_leds.o:(.debug_info)
+   30c77    30c77       2e     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_errno_errno.c.o):(.debug_info)
+   30ca5    30ca5       64     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_info)
+   30d09    30d09       60     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_info)
+   30d69    30d69      13d     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.debug_info)
+   30ea6    30ea6       76     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_info)
+   30f1c    30f1c       97     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_info)
+   30fb3    30fb3       78     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_info)
+   3102b    3102b      136     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(strlen.S.o):(.debug_info)
+       0        0      5d2     1 .debug_rnglists
+       0        0      1d5     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_rnglists)
+     1d5      1d5       c1     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_rnglists)
+     296      296       17     1         ./src/hal_entry.o:(.debug_rnglists)
+     2ad      2ad       1f     1         ./src/pdm.o:(.debug_rnglists)
+     2cc      2cc       d5     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_rnglists)
+     3a1      3a1       6d     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_rnglists)
+     40e      40e       c2     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_rnglists)
+     4d0      4d0       1a     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_rnglists)
+     4ea      4ea       17     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_rnglists)
+     501      501       17     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_rnglists)
+     518      518       20     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_rnglists)
+     538      538       24     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_rnglists)
+     55c      55c       1b     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_rnglists)
+     577      577       17     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_rnglists)
+     58e      58e       44     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_rnglists)
+       0        0     e5f4     1 .debug_str_offsets
+       0        0      188     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_str_offsets)
+     188      188       c4     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_str_offsets)
+     24c      24c      81c     1         ./src/hal_entry.o:(.debug_str_offsets)
+     a68      a68      570     1         ./src/pdm.o:(.debug_str_offsets)
+     fd8      fd8      8b4     1         ./ra_gen/common_data.o:(.debug_str_offsets)
+    188c     188c      a00     1         ./ra_gen/hal_data.o:(.debug_str_offsets)
+    228c     228c       1c     1         ./ra_gen/main.o:(.debug_str_offsets)
+    22a8     22a8      428     1         ./ra_gen/pin_data.o:(.debug_str_offsets)
+    26d0     26d0      804     1         ./ra_gen/vector_data.o:(.debug_str_offsets)
+    2ed4     2ed4     131c     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_str_offsets)
+    41f0     41f0     2230     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_str_offsets)
+    6420     6420       ac     1         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.debug_str_offsets)
+    64cc     64cc     1a54     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_str_offsets)
+    7f20     7f20      45c     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_str_offsets)
+    837c     837c       74     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_str_offsets)
+    83f0     83f0      7d4     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_str_offsets)
+    8bc4     8bc4       24     1         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.debug_str_offsets)
+    8be8     8be8      89c     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_str_offsets)
+    9484     9484      b8c     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_str_offsets)
+    a010     a010     1318     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_str_offsets)
+    b328     b328       2c     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_str_offsets)
+    b354     b354     16ec     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_str_offsets)
+    ca40     ca40       3c     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_str_offsets)
+    ca7c     ca7c     1a00     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_str_offsets)
+    e47c     e47c       1c     1         ./ra/board/ra8p1_ek/board_init.o:(.debug_str_offsets)
+    e498     e498       3c     1         ./ra/board/ra8p1_ek/board_leds.o:(.debug_str_offsets)
+    e4d4     e4d4       1c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_errno_errno.c.o):(.debug_str_offsets)
+    e4f0     e4f0       30     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_str_offsets)
+    e520     e520       30     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_str_offsets)
+    e550     e550       30     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_str_offsets)
+    e580     e580       3c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_str_offsets)
+    e5bc     e5bc       38     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_str_offsets)
+       0        0     fdd3     1 .debug_str
+       0        0     fdd3     1         <internal>:(.debug_str)
+       0        0      740     1 .debug_addr
+       0        0      1b8     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_addr)
+     1b8      1b8       40     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_addr)
+     1f8      1f8       14     1         ./src/hal_entry.o:(.debug_addr)
+     20c      20c       e8     1         ./src/pdm.o:(.debug_addr)
+     2f4      2f4       14     1         ./ra_gen/common_data.o:(.debug_addr)
+     308      308       1c     1         ./ra_gen/hal_data.o:(.debug_addr)
+     324      324        c     1         ./ra_gen/main.o:(.debug_addr)
+     330      330       10     1         ./ra_gen/pin_data.o:(.debug_addr)
+     340      340       10     1         ./ra_gen/vector_data.o:(.debug_addr)
+     350      350       cc     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_addr)
+     41c      41c       8c     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_addr)
+     4a8      4a8       30     1         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.debug_addr)
+     4d8      4d8       c4     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_addr)
+     59c      59c       20     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_addr)
+     5bc      5bc       20     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_addr)
+     5dc      5dc       1c     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_addr)
+     5f8      5f8        c     1         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.debug_addr)
+     604      604       24     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_addr)
+     628      628       18     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_addr)
+     640      640       2c     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_addr)
+     66c      66c        c     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_addr)
+     678      678       14     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_addr)
+     68c      68c       1c     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_addr)
+     6a8      6a8       3c     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_addr)
+     6e4      6e4        c     1         ./ra/board/ra8p1_ek/board_init.o:(.debug_addr)
+     6f0      6f0       10     1         ./ra/board/ra8p1_ek/board_leds.o:(.debug_addr)
+     700      700        c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_addr)
+     70c      70c        c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_addr)
+     718      718       10     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_addr)
+     728      728        c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_addr)
+     734      734        c     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_addr)
+       0        0       29     1 .comment
+       0        0       29     1         <internal>:(.comment)
+       0        0       50     1 .ARM.attributes
+       0        0       50     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.ARM.attributes)
+       0        0      e54     4 .debug_frame
+       0        0      448     4         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_frame)
+     448      448       8c     4         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_frame)
+     4d4      4d4       34     4         ./src/hal_entry.o:(.debug_frame)
+     508      508       80     4         ./src/pdm.o:(.debug_frame)
+     588      588       24     4         ./ra_gen/common_data.o:(.debug_frame)
+     5ac      5ac       24     4         ./ra_gen/hal_data.o:(.debug_frame)
+     5d0      5d0       30     4         ./ra_gen/main.o:(.debug_frame)
+     600      600      15c     4         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_frame)
+     75c      75c      18c     4         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_frame)
+     8e8      8e8      188     4         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_frame)
+     a70      a70       44     4         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_frame)
+     ab4      ab4       34     4         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_frame)
+     ae8      ae8       48     4         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_frame)
+     b30      b30       70     4         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_frame)
+     ba0      ba0       30     4         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_frame)
+     bd0      bd0       44     4         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_frame)
+     c14      c14       30     4         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_frame)
+     c44      c44       68     4         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_frame)
+     cac      cac       40     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_frame)
+     cec      cec       4c     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_frame)
+     d38      d38       24     4         ./ra/board/ra8p1_ek/board_init.o:(.debug_frame)
+     d5c      d5c       34     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_frame)
+     d90      d90       24     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_frame)
+     db4      db4       24     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.debug_frame)
+     dd8      dd8       24     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_frame)
+     dfc      dfc       34     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_frame)
+     e30      e30       24     4         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_frame)
+       0        0     50a2     1 .debug_line
+       0        0     16e5     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.debug_line)
+    16e5     16e5      64c     1         ./src/SEGGER_RTT/SEGGER_RTT_printf.o:(.debug_line)
+    1d31     1d31      12d     1         ./src/hal_entry.o:(.debug_line)
+    1e5e     1e5e      38f     1         ./src/pdm.o:(.debug_line)
+    21ed     21ed       df     1         ./ra_gen/common_data.o:(.debug_line)
+    22cc     22cc      13e     1         ./ra_gen/hal_data.o:(.debug_line)
+    240a     240a       5a     1         ./ra_gen/main.o:(.debug_line)
+    2464     2464       a3     1         ./ra_gen/pin_data.o:(.debug_line)
+    2507     2507       86     1         ./ra_gen/vector_data.o:(.debug_line)
+    258d     258d      888     1         ./ra/fsp/src/r_pdm/r_pdm.o:(.debug_line)
+    2e15     2e15      581     1         ./ra/fsp/src/r_ioport/r_ioport.o:(.debug_line)
+    3396     3396       8e     1         ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o:(.debug_line)
+    3424     3424      a46     1         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.debug_line)
+    3e6a     3e6a       ec     1         ./ra/fsp/src/bsp/mcu/all/bsp_common.o:(.debug_line)
+    3f56     3f56      12f     1         ./ra/fsp/src/bsp/mcu/all/bsp_delay.o:(.debug_line)
+    4085     4085      138     1         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.debug_line)
+    41bd     41bd       75     1         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.debug_line)
+    4232     4232      197     1         ./ra/fsp/src/bsp/mcu/all/bsp_ipc.o:(.debug_line)
+    43c9     43c9       eb     1         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.debug_line)
+    44b4     44b4      11f     1         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.debug_line)
+    45d3     45d3       9a     1         ./ra/fsp/src/bsp/mcu/all/bsp_sbrk.o:(.debug_line)
+    466d     466d      1d2     1         ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o:(.debug_line)
+    483f     483f       a4     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o:(.debug_line)
+    48e3     48e3      2de     1         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.debug_line)
+    4bc1     4bc1       57     1         ./ra/board/ra8p1_ek/board_init.o:(.debug_line)
+    4c18     4c18       8e     1         ./ra/board/ra8p1_ek/board_leds.o:(.debug_line)
+    4ca6     4ca6       43     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_errno_errno.c.o):(.debug_line)
+    4ce9     4ce9       a2     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o):(.debug_line)
+    4d8b     4d8b       ad     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o):(.debug_line)
+    4e38     4e38       45     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.debug_line)
+    4e7d     4e7d       a1     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o):(.debug_line)
+    4f1e     4f1e       9f     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o):(.debug_line)
+    4fbd     4fbd       96     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o):(.debug_line)
+    5053     5053       4f     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(strlen.S.o):(.debug_line)
+       0        0      fb5     1 .debug_line_str
+       0        0      fb5     1         <internal>:(.debug_line_str)
+       0        0       40     1 .debug_aranges
+       0        0       20     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.debug_aranges)
+      20       20       20     1         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(strlen.S.o):(.debug_aranges)
+       0        0     1d30     4 .symtab
+       0        0     1d30     4         <internal>:(.symtab)
+       0        0      c0c     1 .shstrtab
+       0        0      c0c     1         <internal>:(.shstrtab)
+       0        0     25e6     1 .strtab
+       0        0     25e6     1         <internal>:(.strtab)
+
+Cross Reference Table
+
+Symbol                                            File
+_SEGGER_RTT                                       ./src/SEGGER_RTT/SEGGER_RTT.o
+__aeabi_memclr4                                   /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o)
+                                                  ./src/SEGGER_RTT/SEGGER_RTT.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__aeabi_memcpy                                    /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o)
+                                                  ./src/SEGGER_RTT/SEGGER_RTT.o
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+SEGGER_RTT_WriteNoLock                            ./src/SEGGER_RTT/SEGGER_RTT.o
+SEGGER_RTT_Write                                  ./src/SEGGER_RTT/SEGGER_RTT.o
+                                                  ./src/SEGGER_RTT/SEGGER_RTT_printf.o
+SEGGER_RTT_Init                                   ./src/SEGGER_RTT/SEGGER_RTT.o
+                                                  ./src/pdm.o
+SEGGER_RTT_vprintf                                ./src/SEGGER_RTT/SEGGER_RTT_printf.o
+SEGGER_RTT_printf                                 ./src/SEGGER_RTT/SEGGER_RTT_printf.o
+                                                  ./src/pdm.o
+hal_entry                                         ./src/hal_entry.o
+                                                  ./ra_gen/main.o
+r_pdm_basic_messaging_core0_example               ./src/pdm.o
+                                                  ./src/hal_entry.o
+R_BSP_WarmStart                                   ./src/hal_entry.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+g_ioport_ctrl                                     ./ra_gen/common_data.o
+                                                  ./src/hal_entry.o
+g_bsp_pin_cfg                                     ./ra_gen/pin_data.o
+                                                  ./src/hal_entry.o
+                                                  ./ra_gen/common_data.o
+R_IOPORT_Open                                     ./ra/fsp/src/r_ioport/r_ioport.o
+                                                  ./src/hal_entry.o
+g_pdm0_ctrl                                       ./ra_gen/hal_data.o
+                                                  ./src/pdm.o
+g_pdm0_cfg                                        ./ra_gen/hal_data.o
+                                                  ./src/pdm.o
+R_PDM_Open                                        ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./src/pdm.o
+R_BSP_SoftwareDelay                               ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+                                                  ./src/pdm.o
+                                                  ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./ra/fsp/src/r_ioport/r_ioport.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+R_PDM_SoundDetectionEnable                        ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./src/pdm.o
+g_pdm0_buffer                                     ./src/pdm.o
+R_PDM_Start                                       ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./src/pdm.o
+R_PDM_Stop                                        ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./src/pdm.o
+R_PDM_Close                                       ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./src/pdm.o
+pdm0_callback                                     ./src/pdm.o
+                                                  ./ra_gen/hal_data.o
+g_pdm0_cfg_extend                                 ./ra_gen/hal_data.o
+main                                              ./ra_gen/main.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+g_bsp_pin_cfg_data                                ./ra_gen/pin_data.o
+g_vector_table                                    ./ra_gen/vector_data.o
+pdm_dat_isr                                       ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./ra_gen/vector_data.o
+pdm_err_isr                                       ./ra/fsp/src/r_pdm/r_pdm.o
+                                                  ./ra_gen/vector_data.o
+g_interrupt_event_link_select                     ./ra_gen/vector_data.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+gp_renesas_isr_context                            ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                                                  ./ra/fsp/src/r_pdm/r_pdm.o
+g_protect_pfswe_counter                           ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+                                                  ./ra/fsp/src/r_ioport/r_ioport.o
+R_BSP_RegisterProtectDisable                      ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                                                  ./ra/fsp/src/r_ioport/r_ioport.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+R_BSP_RegisterProtectEnable                       ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                                                  ./ra/fsp/src/r_ioport/r_ioport.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__sdram_noinit_nocache$$Base                      fsp_gen.lld:404
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_zero_nocache$$Limit                       fsp_gen.lld:416
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_noinit_nocache$$Base                  fsp_gen.lld:454
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_zero_nocache$$Limit                   fsp_gen.lld:466
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_noinit_nocache$$Base                  fsp_gen.lld:504
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_zero_nocache$$Limit                   fsp_gen.lld:516
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_noinit_nocache$$Base                        fsp_gen.lld:622
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_zero_nocache$$Limit                         fsp_gen.lld:634
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+g_init_info                                       ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__sdram_zero_nocache$$Base                        fsp_gen.lld:412
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_zero$$Base                                fsp_gen.lld:429
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_zero$$Limit                               fsp_gen.lld:432
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_zero_nocache$$Base                    fsp_gen.lld:462
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_zero$$Base                            fsp_gen.lld:479
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_zero$$Limit                           fsp_gen.lld:482
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_zero_nocache$$Base                    fsp_gen.lld:512
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_zero$$Base                            fsp_gen.lld:529
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_zero$$Limit                           fsp_gen.lld:532
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_zero$$Base                                 fsp_gen.lld:562
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_zero$$Limit                                fsp_gen.lld:565
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_zero$$Base                                 fsp_gen.lld:595
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_zero$$Limit                                fsp_gen.lld:598
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_zero_nocache$$Base                          fsp_gen.lld:630
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_zero$$Base                                  fsp_gen.lld:650
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_zero$$Limit                                 fsp_gen.lld:654
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_tbss$$Base                                  fsp_gen.lld:668
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_tbss$$Limit                                 fsp_gen.lld:673
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi0_cs1$$Base                      fsp_gen.lld:48
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi0_cs1$$Limit                     fsp_gen.lld:53
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi0_cs1$$Load                      fsp_gen.lld:48
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi1_cs1$$Base                      fsp_gen.lld:179
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi1_cs1$$Limit                     fsp_gen.lld:184
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_ospi1_cs1$$Load                      fsp_gen.lld:179
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_data_flash$$Base                     fsp_gen.lld:279
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_data_flash$$Limit                    fsp_gen.lld:284
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_data_flash$$Load                     fsp_gen.lld:279
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_flash$$Base                          fsp_gen.lld:394
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_flash$$Limit                         fsp_gen.lld:399
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__sdram_from_flash$$Load                          fsp_gen.lld:394
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi0_cs1$$Base                  fsp_gen.lld:65
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi0_cs1$$Limit                 fsp_gen.lld:70
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi0_cs1$$Load                  fsp_gen.lld:65
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi1_cs1$$Base                  fsp_gen.lld:191
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi1_cs1$$Limit                 fsp_gen.lld:196
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_ospi1_cs1$$Load                  fsp_gen.lld:191
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_data_flash$$Base                 fsp_gen.lld:291
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_data_flash$$Limit                fsp_gen.lld:296
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_data_flash$$Load                 fsp_gen.lld:291
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_flash$$Base                      fsp_gen.lld:444
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_flash$$Limit                     fsp_gen.lld:449
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi0_cs0_from_flash$$Load                      fsp_gen.lld:444
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi0_cs1$$Base                  fsp_gen.lld:82
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi0_cs1$$Limit                 fsp_gen.lld:87
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi0_cs1$$Load                  fsp_gen.lld:82
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi1_cs1$$Base                  fsp_gen.lld:203
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi1_cs1$$Limit                 fsp_gen.lld:208
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_ospi1_cs1$$Load                  fsp_gen.lld:203
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_data_flash$$Base                 fsp_gen.lld:303
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_data_flash$$Limit                fsp_gen.lld:308
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_data_flash$$Load                 fsp_gen.lld:303
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_flash$$Base                      fsp_gen.lld:494
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_flash$$Limit                     fsp_gen.lld:499
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ospi1_cs0_from_flash$$Load                      fsp_gen.lld:494
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi0_cs1$$Base                       fsp_gen.lld:99
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi0_cs1$$Limit                      fsp_gen.lld:104
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi0_cs1$$Load                       fsp_gen.lld:99
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi1_cs1$$Base                       fsp_gen.lld:215
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi1_cs1$$Limit                      fsp_gen.lld:220
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_ospi1_cs1$$Load                       fsp_gen.lld:215
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_data_flash$$Base                      fsp_gen.lld:315
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_data_flash$$Limit                     fsp_gen.lld:320
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_data_flash$$Load                      fsp_gen.lld:315
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_flash$$Base                           fsp_gen.lld:544
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_flash$$Limit                          fsp_gen.lld:549
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__itcm_from_flash$$Load                           fsp_gen.lld:544
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi0_cs1$$Base                       fsp_gen.lld:116
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi0_cs1$$Limit                      fsp_gen.lld:121
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi0_cs1$$Load                       fsp_gen.lld:116
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi1_cs1$$Base                       fsp_gen.lld:227
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi1_cs1$$Limit                      fsp_gen.lld:232
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_ospi1_cs1$$Load                       fsp_gen.lld:227
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_data_flash$$Base                      fsp_gen.lld:327
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_data_flash$$Limit                     fsp_gen.lld:332
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_data_flash$$Load                      fsp_gen.lld:327
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_flash$$Base                           fsp_gen.lld:577
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_flash$$Limit                          fsp_gen.lld:582
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__dtcm_from_flash$$Load                           fsp_gen.lld:577
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi0_cs1$$Base                        fsp_gen.lld:139
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi0_cs1$$Limit                       fsp_gen.lld:144
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi0_cs1$$Load                        fsp_gen.lld:139
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi1_cs1$$Base                        fsp_gen.lld:239
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi1_cs1$$Limit                       fsp_gen.lld:244
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_ospi1_cs1$$Load                        fsp_gen.lld:239
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_data_flash$$Base                       fsp_gen.lld:339
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_data_flash$$Limit                      fsp_gen.lld:344
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_data_flash$$Load                       fsp_gen.lld:339
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_flash$$Base                            fsp_gen.lld:610
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_flash$$Limit                           fsp_gen.lld:617
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_from_flash$$Load                            fsp_gen.lld:610
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_tdata$$Base                                 fsp_gen.lld:659
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_tdata$$Limit                                fsp_gen.lld:663
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+__ram_tdata$$Load                                 fsp_gen.lld:659
+                                                  ./ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.o
+SystemCoreClockUpdate                             ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+SystemCoreClock                                   ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+bsp_clock_init                                    ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+R_BSP_SubClockStabilizeWaitAfterReset             ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+R_BSP_Init_RTC                                    ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+bsp_init                                          ./ra/board/ra8p1_ek/board_init.o
+                                                  ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+bsp_prv_software_delay_loop                       ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+g_bsp_group_irq_sources                           ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+NMI_Handler                                       ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+bsp_irq_cfg                                       ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+g_protect_counters                                ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+Reset_Handler                                     ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+SystemInit                                        ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+Default_Handler                                   ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+g_main_stack                                      ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__Vectors                                         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+HardFault_Handler                                 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+MemManage_Handler                                 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+BusFault_Handler                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+UsageFault_Handler                                ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+SecureFault_Handler                               ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+SVC_Handler                                       ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+DebugMon_Handler                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+PendSV_Handler                                    ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+SysTick_Handler                                   ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+__aeabi_memcpy4                                   /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o)
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__tls_base                                        fsp_gen.lld:1024
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+_init_tls                                         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+_set_tls                                          /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o)
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__init_array_end                                  fsp_gen.lld:739
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__init_array_start                                fsp_gen.lld:736
+                                                  ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+__aeabi_memclr                                    /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o)
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+__tdata_source                                    fsp_gen.lld:1025
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+__tdata_size                                      fsp_gen.lld:1026
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+__tbss_offset                                     fsp_gen.lld:1027
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+__tbss_size                                       fsp_gen.lld:1028
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_inittls.c.o)
+__arm32_tls_tcb_offset                            fsp_gen.lld:1029
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o)
+__tls                                             /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o)
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_tls.c.o)
+bzero                                             /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o)
+memset                                            /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memset.c.o)
+                                                  /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o)
+__aeabi_memclr8                                   /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(bzero.c.o)
+memcpy                                            /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o)
+__aeabi_memcpy8                                   /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(memcpy.c.o)
