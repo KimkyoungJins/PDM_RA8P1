@@ -7,9 +7,9 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
 { .clock_div = PDM_CLOCK_DIV_2,
 
   /** Function Settings. */
-  .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_DISABLED,
-  .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_DISABLED,
-  .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_DISABLED,
+  .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_ENABLED,
+  .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_ENABLED,
+  .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_ENABLED,
   .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_ENABLED,
 
   /** Filter Settings. */
@@ -53,12 +53,12 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
   .interrupt_threshold = PDM_INTERRUPT_THRESHOLD_16,
 
   /** Short-Circuit Detection. */
-  .short_circuit_count_h = 0x0,
-  .short_circuit_count_l = 0x0,
+  .short_circuit_count_h = 0x20,
+  .short_circuit_count_l = 0x20,
 
   /** Overvoltage Detection. */
-  .overvoltage_detection_lower_limit = 0x0,
-  .overvoltage_detection_upper_limit = 0x0,
+  .overvoltage_detection_lower_limit = 0xFFE0C,
+  .overvoltage_detection_upper_limit = 500,
 
 };
 
@@ -81,21 +81,21 @@ const pdm_cfg_t g_pdm0_cfg =
 #else
   .sdet_irq = FSP_INVALID_VECTOR,
 #endif
-  .sdet_ipl = (BSP_IRQ_DISABLED),
+  .sdet_ipl = (1),
 
 #if defined(VECTOR_NUMBER_PDM_DAT2)
                 .dat_irq                               = PDM_DAT2_IRQn,
 #else
   .dat_irq = FSP_INVALID_VECTOR,
 #endif
-  .dat_ipl = (12),
+  .dat_ipl = (2),
 
 #if defined(VECTOR_NUMBER_PDM_ERR2)
                 .err_irq                               = PDM_ERR2_IRQn,
 #else
   .err_irq = FSP_INVALID_VECTOR,
 #endif
-  .err_ipl = (12), };
+  .err_ipl = (3), };
 
 /* Instance structure to use this module. */
 const pdm_instance_t g_pdm0 =

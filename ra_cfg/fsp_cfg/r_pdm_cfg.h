@@ -5,7 +5,7 @@
             extern "C" {
             #endif
 
-#define PDM_CFG_PARAM_CHECKING_ENABLE (BSP_CFG_PARAM_CHECKING_ENABLE)
+#define PDM_CFG_PARAM_CHECKING_ENABLE (1)
 #define PDM_CFG_DMAC_ENABLE (0)
 
 #ifdef __cplusplus

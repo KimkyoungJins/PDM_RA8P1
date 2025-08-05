@@ -874,7 +874,7 @@ FSP Configuration
     Parameter Checking: Default (BSP)
     
   Module "PDM (r_pdm)"
-    Parameter Checking: Default (BSP)
+    Parameter Checking: Enabled
     DMAC Support: Disabled
     
   HAL
@@ -936,15 +936,15 @@ FSP Configuration
       Filter: Sinc Filter Mode: 4-order
       Data Reception: Buffer Overwrite Detection Enable: Enabled
       Data Reception: Data Reception Interrupt Threshold: 16 or more data
-      Short Circuit Detection: Short Circuit Detection Enable: Disabled
-      Short Circuit Detection: Short Circuit Detection High Continuous Detection Count: 0x0
-      Short Circuit Detection: Short Circuit Detection Low Continuous Detection Count: 0x0
-      Overvoltage Detection: Overvoltage Detection Lower Limit Enable: Disabled
-      Overvoltage Detection: Overvoltage Detection Lower Limit: 0x0
-      Overvoltage Detection: Overvoltage Detection Upper Limit Enable: Disabled
-      Overvoltage Detection: Overvoltage Detection Upper Limit: 0x0
+      Short Circuit Detection: Short Circuit Detection Enable: Enabled
+      Short Circuit Detection: Short Circuit Detection High Continuous Detection Count: 0x20
+      Short Circuit Detection: Short Circuit Detection Low Continuous Detection Count: 0x20
+      Overvoltage Detection: Overvoltage Detection Lower Limit Enable: Enabled
+      Overvoltage Detection: Overvoltage Detection Lower Limit: 0xFFE0C
+      Overvoltage Detection: Overvoltage Detection Upper Limit Enable: Enabled
+      Overvoltage Detection: Overvoltage Detection Upper Limit: 500
       Interrupt: Callback: pdm0_callback
-      Interrupt: Sound Detection Interrupt Priority: Disabled
-      Interrupt: Data Reception Interrupt Priority: Priority 12
-      Interrupt: Error Detection Interrupt Priority: Priority 12
+      Interrupt: Sound Detection Interrupt Priority: Priority 1
+      Interrupt: Data Reception Interrupt Priority: Priority 2
+      Interrupt: Error Detection Interrupt Priority: Priority 3
       

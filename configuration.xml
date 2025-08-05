@@ -464,17 +464,17 @@
       <property id="module.driver.pdm.sinc_filter_mode" value="module.driver.pdm.sinc_filter_mode.order_4"/>
       <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_enabled"/>
       <property id="module.driver.pdm.pdm_input_threshold" value="module.driver.pdm.pdm_input_threshold.pdm_input_threshold_16"/>
-      <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_disabled"/>
-      <property id="module.driver.pdm.shor_circuit_count_h" value="0x0"/>
-      <property id="module.driver.pdm.shor_circuit_count_l" value="0x0"/>
-      <property id="module.driver.pdm.overvoltage_detection_lower_limit_error" value="module.driver.pdm.overvoltage_detection_lower_limit_error.overvoltage_detection_lower_limit_error_disabled"/>
-      <property id="module.driver.pdm.overvoltage_detection_lower_limit" value="0x0"/>
-      <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_disabled"/>
-      <property id="module.driver.pdm.overvoltage_detection_upper_limit" value="0x0"/>
+      <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_enabled"/>
+      <property id="module.driver.pdm.shor_circuit_count_h" value="0x20"/>
+      <property id="module.driver.pdm.shor_circuit_count_l" value="0x20"/>
+      <property id="module.driver.pdm.overvoltage_detection_lower_limit_error" value="module.driver.pdm.overvoltage_detection_lower_limit_error.overvoltage_detection_lower_limit_error_enabled"/>
+      <property id="module.driver.pdm.overvoltage_detection_lower_limit" value="0xFFE0C"/>
+      <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_enabled"/>
+      <property id="module.driver.pdm.overvoltage_detection_upper_limit" value="500"/>
       <property id="module.driver.pdm.callback" value="pdm0_callback"/>
-      <property id="module.driver.pdm.sdet_ipl" value="_disabled"/>
-      <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.pdm.sdet_ipl" value="board.icu.common.irq.priority1"/>
+      <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority2"/>
+      <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority3"/>
     </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
@@ -484,7 +484,7 @@
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
     </config>
     <config id="config.driver.pdm">
-      <property id="config.driver.pdm.param_checking_enable" value="config.driver.pdm.param_checking_enable.bsp"/>
+      <property id="config.driver.pdm.param_checking_enable" value="config.driver.pdm.param_checking_enable.enabled"/>
       <property id="config.driver.pdm.dmac_enable" value="config.driver.pdm.dmac_enable.disabled"/>
     </config>
   </raModuleConfiguration>
