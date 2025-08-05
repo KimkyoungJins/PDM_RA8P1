@@ -4,9 +4,9 @@
 #define PDM_BUFFER_NUM_SAMPLES 1024 // Number of samples to store in data buffer
 #define PDM_CALLBACK_NUM_SAMPLES PDM_BUFFER_NUM_SAMPLES / 2 // Number of samples to store in data buffer before getting a callback
 #define PDM_MIC_STARTUP_TIME_US 35000 // PDM microphone startup time, RA8P1 EK mic startup time is 35ms.
-#define PDM_SDE_UPPER_LIMIT 5000 // Detect sound above this value
-#define PDM_SDE_LOWER_LIMIT 0xFF800000 // Detect sound below this value
-#define PDM0_FILTER_SETTLING_TIME_US (25000U) // 25ms (안전한 값)
+#define PDM_SDE_UPPER_LIMIT 1
+#define PDM_SDE_LOWER_LIMIT 0xFFFFFE  // -2
+#define PDM0_FILTER_SETTLING_TIME_US (25000U) // 25ms 안전한 값으로 
 
 uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
 
@@ -27,6 +27,7 @@ void r_pdm_basic_messaging_core0_example(void)
     {
         SEGGER_RTT_printf(0, "✅ PDM Open: SUCCESS\n");
     }
+
     else
     {
         SEGGER_RTT_printf(0, "❌ PDM Open: FAILED (Error: 0x%X)\n", err);
@@ -42,6 +43,9 @@ void r_pdm_basic_messaging_core0_example(void)
 
 
     SEGGER_RTT_printf(0, "✅ Filter and Mic ready!\n");
+    SEGGER_RTT_printf(0, "\n");
+    SEGGER_RTT_printf(0, "\n");
+
 
     /* Enable sound detection (if desired). */
     pdm_sound_detection_setting_t sound_detection_setting =
@@ -70,6 +74,7 @@ void r_pdm_basic_messaging_core0_example(void)
         SEGGER_RTT_printf(0, "📊 Listening for audio... (Press any key to stop)\n");
         SEGGER_RTT_printf(0, "================================================\n");
     }
+    
     else
     {
         SEGGER_RTT_printf(0, "❌ PDM Start: FAILED (Error: 0x%X)\n", err);
@@ -78,10 +83,11 @@ void r_pdm_basic_messaging_core0_example(void)
     // 여기서 실제로는 사용자 입력이나 타이머를 기다릴 수 있습니다
     // 예시를 위해 10초 후 자동 종료
     SEGGER_RTT_printf(0, "🕐 Recording for 10 seconds...\n");
-    R_BSP_SoftwareDelay(10000000, BSP_DELAY_UNITS_MICROSECONDS); // 10초, 수정
+
+    // 10초를 기다린다 10초 동안 PDM이 실행되기 때문에 그 동안 콜백함수가 계속 호출됨
+    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS); 
 
     SEGGER_RTT_printf(0, "\n================================================\n");
-    SEGGER_RTT_printf(0, "🛑 Stopping PDM recording...\n");
 
     /* Stop receiving PDM data. */
     err = R_PDM_Stop(&g_pdm0_ctrl);
