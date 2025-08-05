@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "__availability": "c",
+        "__config": "c",
+        "__locale": "c",
+        "bitset": "c",
+        "ios": "c",
+        "locale": "c",
+        "system_error": "c",
+        "tuple": "c"
+    }
+}

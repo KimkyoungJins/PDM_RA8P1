@@ -7,7 +7,7 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
 { .clock_div = PDM_CLOCK_DIV_2,
 
   /** Function Settings. */
-  .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_ENABLED,
+  .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_DISABLED,
   .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_ENABLED,
   .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_ENABLED,
   .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_ENABLED,
@@ -53,8 +53,8 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
   .interrupt_threshold = PDM_INTERRUPT_THRESHOLD_16,
 
   /** Short-Circuit Detection. */
-  .short_circuit_count_h = 0x20,
-  .short_circuit_count_l = 0x20,
+  .short_circuit_count_h = 0,
+  .short_circuit_count_l = 0,
 
   /** Overvoltage Detection. */
   .overvoltage_detection_lower_limit = 0xFFE0C,

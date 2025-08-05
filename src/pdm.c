@@ -129,8 +129,9 @@ void pdm0_callback(pdm_callback_args_t * p_args)
         {
             g_sound_detection_count++;
 
-            SEGGER_RTT_printf(0, "🔔 SOUND DETECTED! (#%lu) - Loud sound threshold exceeded\n",
-                             g_sound_detection_count);
+        
+                SEGGER_RTT_printf(0, "🔔 SOUND DETECTED! (#%lu) - Loud sound threshold exceeded\n",
+                g_sound_detection_count);
 
             break;
         }

@@ -464,9 +464,9 @@
       <property id="module.driver.pdm.sinc_filter_mode" value="module.driver.pdm.sinc_filter_mode.order_4"/>
       <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_enabled"/>
       <property id="module.driver.pdm.pdm_input_threshold" value="module.driver.pdm.pdm_input_threshold.pdm_input_threshold_16"/>
-      <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_enabled"/>
-      <property id="module.driver.pdm.shor_circuit_count_h" value="0x20"/>
-      <property id="module.driver.pdm.shor_circuit_count_l" value="0x20"/>
+      <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_disabled"/>
+      <property id="module.driver.pdm.shor_circuit_count_h" value="0"/>
+      <property id="module.driver.pdm.shor_circuit_count_l" value="0"/>
       <property id="module.driver.pdm.overvoltage_detection_lower_limit_error" value="module.driver.pdm.overvoltage_detection_lower_limit_error.overvoltage_detection_lower_limit_error_enabled"/>
       <property id="module.driver.pdm.overvoltage_detection_lower_limit" value="0xFFE0C"/>
       <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_enabled"/>

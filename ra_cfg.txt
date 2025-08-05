@@ -936,9 +936,9 @@ FSP Configuration
       Filter: Sinc Filter Mode: 4-order
       Data Reception: Buffer Overwrite Detection Enable: Enabled
       Data Reception: Data Reception Interrupt Threshold: 16 or more data
-      Short Circuit Detection: Short Circuit Detection Enable: Enabled
-      Short Circuit Detection: Short Circuit Detection High Continuous Detection Count: 0x20
-      Short Circuit Detection: Short Circuit Detection Low Continuous Detection Count: 0x20
+      Short Circuit Detection: Short Circuit Detection Enable: Disabled
+      Short Circuit Detection: Short Circuit Detection High Continuous Detection Count: 0
+      Short Circuit Detection: Short Circuit Detection Low Continuous Detection Count: 0
       Overvoltage Detection: Overvoltage Detection Lower Limit Enable: Enabled
       Overvoltage Detection: Overvoltage Detection Lower Limit: 0xFFE0C
       Overvoltage Detection: Overvoltage Detection Upper Limit Enable: Enabled
