@@ -419,7 +419,7 @@
       <property id="module.driver.pdm.channel" value="2"/>
       <property id="module.driver.pdm.edge" value="module.driver.pdm.egde.pdm_egde_rise"/>
       <property id="module.driver.pdm.clock_div" value="module.driver.pdm.clock_div.clock_div_2"/>
-      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width.pcm_width_20bits_0_18"/>
+      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width_16bits_4_18"/>
       <property id="module.driver.pdm.pdm_output_sampling_freq" value="32000"/>
       <property id="module.driver.pdm.moving_average_mode" value="module.driver.pdm.moving_average_mode.order_1"/>
       <property id="module.driver.pdm.lpf_shift" value="module.driver.pdm.lpf_shift.shift_0"/>
@@ -462,15 +462,15 @@
       <property id="module.driver.pdm.hpf_coefficient_h0" value="0x4000"/>
       <property id="module.driver.pdm.hpf_coefficient_h1" value="0xC000"/>
       <property id="module.driver.pdm.sinc_filter_mode" value="module.driver.pdm.sinc_filter_mode.order_4"/>
-      <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_enabled"/>
+      <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_disabled"/>
       <property id="module.driver.pdm.pdm_input_threshold" value="module.driver.pdm.pdm_input_threshold.pdm_input_threshold_16"/>
       <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_disabled"/>
       <property id="module.driver.pdm.shor_circuit_count_h" value="0"/>
       <property id="module.driver.pdm.shor_circuit_count_l" value="0"/>
-      <property id="module.driver.pdm.overvoltage_detection_lower_limit_error" value="module.driver.pdm.overvoltage_detection_lower_limit_error.overvoltage_detection_lower_limit_error_enabled"/>
-      <property id="module.driver.pdm.overvoltage_detection_lower_limit" value="0xFFE0C"/>
-      <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_enabled"/>
-      <property id="module.driver.pdm.overvoltage_detection_upper_limit" value="500"/>
+      <property id="module.driver.pdm.overvoltage_detection_lower_limit_error" value="module.driver.pdm.overvoltage_detection_lower_limit_error.overvoltage_detection_lower_limit_error_disabled"/>
+      <property id="module.driver.pdm.overvoltage_detection_lower_limit" value="0xE0C0"/>
+      <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_disabled"/>
+      <property id="module.driver.pdm.overvoltage_detection_upper_limit" value="8000"/>
       <property id="module.driver.pdm.callback" value="pdm0_callback"/>
       <property id="module.driver.pdm.sdet_ipl" value="board.icu.common.irq.priority1"/>
       <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority2"/>

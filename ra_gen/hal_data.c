@@ -8,9 +8,9 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
 
   /** Function Settings. */
   .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_DISABLED,
-  .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_ENABLED,
-  .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_ENABLED,
-  .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_ENABLED,
+  .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_DISABLED,
+  .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_DISABLED,
+  .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_DISABLED,
 
   /** Filter Settings. */
   .moving_average_mode = PDM_MOVING_AVERAGE_MODE_1_ORDER,
@@ -57,14 +57,14 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
   .short_circuit_count_l = 0,
 
   /** Overvoltage Detection. */
-  .overvoltage_detection_lower_limit = 0xFFE0C,
-  .overvoltage_detection_upper_limit = 500,
+  .overvoltage_detection_lower_limit = 0xE0C0,
+  .overvoltage_detection_upper_limit = 8000,
 
 };
 
 /** PDM interface configuration */
 const pdm_cfg_t g_pdm0_cfg =
-{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_20_BITS_0_18, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
+{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_16_BITS_4_18, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
 
 #define RA_NOT_DEFINED (1)
 #if (RA_NOT_DEFINED == RA_NOT_DEFINED)
