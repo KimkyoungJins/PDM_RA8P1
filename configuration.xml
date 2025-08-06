@@ -462,7 +462,7 @@
       <property id="module.driver.pdm.hpf_coefficient_h0" value="0x4000"/>
       <property id="module.driver.pdm.hpf_coefficient_h1" value="0xC000"/>
       <property id="module.driver.pdm.sinc_filter_mode" value="module.driver.pdm.sinc_filter_mode.order_4"/>
-      <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_disabled"/>
+      <property id="module.driver.pdm.overwrite_error" value="module.driver.pdm.overwrite_error.overwrite_error_enabled"/>
       <property id="module.driver.pdm.pdm_input_threshold" value="module.driver.pdm.pdm_input_threshold.pdm_input_threshold_16"/>
       <property id="module.driver.pdm.short_circuit" value="module.driver.pdm.short_circuit.short_circuit_disabled"/>
       <property id="module.driver.pdm.shor_circuit_count_h" value="0"/>

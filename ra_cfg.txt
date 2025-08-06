@@ -934,7 +934,7 @@ FSP Configuration
       Filter: High-pass Filter: HPF Coefficient h(0): 0x4000
       Filter: High-pass Filter: HPF Coefficient h(1): 0xC000
       Filter: Sinc Filter Mode: 4-order
-      Data Reception: Buffer Overwrite Detection Enable: Disabled
+      Data Reception: Buffer Overwrite Detection Enable: Enabled
       Data Reception: Data Reception Interrupt Threshold: 16 or more data
       Short Circuit Detection: Short Circuit Detection Enable: Disabled
       Short Circuit Detection: Short Circuit Detection High Continuous Detection Count: 0

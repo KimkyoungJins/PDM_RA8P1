@@ -10,7 +10,7 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
   .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_DISABLED,
   .over_voltage_lower_limit_detection_enable = PDM_OVERVOLTAGE_LOWER_LIMIT_DISABLED,
   .over_voltage_upper_limit_detection_enable = PDM_OVERVOLTAGE_UPPER_LIMIT_DISABLED,
-  .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_DISABLED,
+  .buffer_overwrite_detection_enable = PDM_BUFFER_OVERWRITE_DETECTION_ENABLED,
 
   /** Filter Settings. */
   .moving_average_mode = PDM_MOVING_AVERAGE_MODE_1_ORDER,
