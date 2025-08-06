@@ -4,8 +4,8 @@
 #define PDM_BUFFER_NUM_SAMPLES 1024 // Number of samples to store in data buffer
 #define PDM_CALLBACK_NUM_SAMPLES PDM_BUFFER_NUM_SAMPLES / 2 // Number of samples to store in data buffer before getting a callback
 #define PDM_MIC_STARTUP_TIME_US 35000 // PDM microphone startup time, RA8P1 EK mic startup time is 35ms.
-#define PDM_SDE_UPPER_LIMIT (uint32_t)80000  // Unsigned으로 주어야 함
-#define PDM_SDE_LOWER_LIMIT (uint32_t)-80000 // Unsigned으로 주어야 함
+#define PDM_SDE_UPPER_LIMIT (uint32_t)10000  // Unsigned으로 주어야 함
+#define PDM_SDE_LOWER_LIMIT (uint32_t)-10000 // Unsigned으로 주어야 함
 #define PDM0_FILTER_SETTLING_TIME_US (25000U) // 25ms 안전한 값으로 
 
 uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
@@ -128,7 +128,6 @@ void pdm0_callback(pdm_callback_args_t * p_args)
         case PDM_EVENT_SOUND_DETECTION:
         {
             g_sound_detection_count++;
-
                 SEGGER_RTT_printf(0, "🔔 SOUND DETECTED! (#%lu) - Loud sound threshold exceeded\n",
                 g_sound_detection_count);
             
