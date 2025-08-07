@@ -1,12 +1,18 @@
 #include "hal_data.h"
 #include "SEGGER_RTT/SEGGER_RTT.h"
 
-#define PDM_BUFFER_NUM_SAMPLES 1024
-#define PDM_CALLBACK_NUM_SAMPLES PDM_BUFFER_NUM_SAMPLES / 2 
+#define PDM_BUFFER_NUM_SAMPLES 2048
+#define PDM_CALLBACK_NUM_SAMPLES 512
 #define PDM_MIC_STARTUP_TIME_US 35000 
 #define PDM_SDE_UPPER_LIMIT (uint32_t)10000  
 #define PDM_SDE_LOWER_LIMIT (uint32_t)-10000 
-#define PDM0_FILTER_SETTLING_TIME_US (25000U) 
+#define PDM0_FILTER_SETTLING_TIME_US (25000U)
+
+// 텍스트 출력 설정
+#define ENABLE_AUDIO_TEXT_OUTPUT 1      // 텍스트 출력 활성화
+#define AUDIO_OUTPUT_INTERVAL 1         // 매 콜백마다 출력 (1=전체, 10=10번마다)
+#define SAMPLES_PER_LINE 8              // 한 줄에 출력할 샘플 수
+#define OUTPUT_FORMAT_HEX 1             // 1=16진수, 0=10진수
 
 uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
 
@@ -14,6 +20,7 @@ uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
 static uint32_t g_sound_detection_count = 0;
 static uint32_t g_data_callback_count = 0;
 static uint32_t g_error_count = 0;
+static uint32_t g_total_samples_saved = 0;  // 저장된 총 샘플 수
 
 // Simple counter-based time measurement
 static uint32_t g_callback_start_count = 0;
@@ -82,7 +89,7 @@ void r_pdm_basic_messaging_core0_example(void)
     SEGGER_RTT_printf(0, "Recording for 10 seconds...\n");
 
     // Wait for 10 seconds
-    R_BSP_SoftwareDelay(1000000000, BSP_DELAY_UNITS_MICROSECONDS); 
+    R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_SECONDS); 
 
     SEGGER_RTT_printf(0, "\n================================================\n");
 
@@ -135,14 +142,30 @@ void r_pdm_basic_messaging_core0_example(void)
         SEGGER_RTT_printf(0, "Estimated sampling frequency: ~%lu Hz\n", estimated_freq);
     }
 
-    // Final statistics output
-    SEGGER_RTT_printf(0, "\n=== Final Statistics ===\n");
-    SEGGER_RTT_printf(0, "Sound Detections: %lu times\n", g_sound_detection_count);
-    SEGGER_RTT_printf(0, "Data Callbacks: %lu times\n", g_data_callback_count);
+    // ✅ 개선된 최종 통계
+    SEGGER_RTT_printf(0, "\n=== FINAL AUDIO DATA SUMMARY ===\n");
+    SEGGER_RTT_printf(0, "Total callbacks processed: %lu\n", g_data_callback_count);
+    SEGGER_RTT_printf(0, "Total samples saved: %lu\n", g_total_samples_saved);
+    SEGGER_RTT_printf(0, "Total recording time: %lu.%03lu seconds\n", 
+                     g_total_samples_saved * 1000 / 16000 / 1000,
+                     (g_total_samples_saved * 1000 / 16000) % 1000);
+    SEGGER_RTT_printf(0, "Average samples per callback: %lu\n", 
+                     g_total_samples_saved / (g_data_callback_count > 0 ? g_data_callback_count : 1));
+    SEGGER_RTT_printf(0, "Data integrity: %s\n", 
+                     g_error_count == 0 ? "PERFECT" : "SOME ERRORS OCCURRED");
+    SEGGER_RTT_printf(0, "Sound detections: %lu times\n", g_sound_detection_count);
     SEGGER_RTT_printf(0, "Errors: %lu times\n", g_error_count);
-    SEGGER_RTT_printf(0, "Total Audio Samples Processed: %lu\n", g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES);
-    SEGGER_RTT_printf(0, "========================\n");
+    
+    // 데이터 파일 정보
+    SEGGER_RTT_printf(0, "\n=== SAVED DATA INFO ===\n");
+    SEGGER_RTT_printf(0, "Format: %s\n", OUTPUT_FORMAT_HEX ? "Hexadecimal" : "Decimal");
+    SEGGER_RTT_printf(0, "Samples per line: %d\n", SAMPLES_PER_LINE);
+    SEGGER_RTT_printf(0, "Output interval: Every %d callback(s)\n", AUDIO_OUTPUT_INTERVAL);
+    SEGGER_RTT_printf(0, "Estimated file size: ~%lu KB\n", 
+                     g_total_samples_saved * 10 / 1024); // 대략적인 텍스트 크기
+    SEGGER_RTT_printf(0, "=====================================\n");
 }
+
 
 void pdm0_callback(pdm_callback_args_t * p_args)
 {
@@ -164,27 +187,25 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             if (g_data_callback_count == 1)
             {
                 g_callback_start_count = g_data_callback_count;
-                SEGGER_RTT_printf(0, "First callback started!\n");
+                SEGGER_RTT_printf(0, "First callback started! Starting audio data logging...\n");
             }
 
-            // Periodic detailed output (every 10 times)
+            // ✅ 오디오 데이터를 텍스트로 저장
+            save_audio_data_as_text(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES, g_data_callback_count);
+            
+            // 또는 CSV 형식으로 저장 (선택)
+            // save_audio_data_as_csv(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES, g_data_callback_count);
+
+            // Periodic status output (every 10 times)
             if (g_data_callback_count % 10 == 0)
             {
-                SEGGER_RTT_printf(0, "[DATA] Callback #%lu - %d samples ready (Total: %lu samples)\n",
-                                 g_data_callback_count,
-                                 PDM_CALLBACK_NUM_SAMPLES,
-                                 g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES);
-
-                // Sample values output
-                SEGGER_RTT_printf(0, "   Sample values: [0]=%08lx, [1]=%08lx, [2]=%08lx, [3]=%08lx\n",
+                SEGGER_RTT_printf(0, "\n[STATUS] Callback #%lu - Progress Report\n", g_data_callback_count);
+                SEGGER_RTT_printf(0, "   Total samples processed: %lu\n", g_total_samples_saved);
+                SEGGER_RTT_printf(0, "   Estimated time: %lu.%03lu seconds\n", 
+                                 g_total_samples_saved * 1000 / 16000 / 1000,
+                                 (g_total_samples_saved * 1000 / 16000) % 1000);
+                SEGGER_RTT_printf(0, "   Recent sample values: [0]=%08lx, [1]=%08lx, [2]=%08lx, [3]=%08lx\n",
                                  g_pdm0_buffer[0], g_pdm0_buffer[1], g_pdm0_buffer[2], g_pdm0_buffer[3]);
-                
-                // Estimated elapsed time using integer math
-                uint32_t total_samples = g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES;
-                uint32_t estimated_time_ms = total_samples * 1000 / 16000; // Assume 16kHz
-                
-                SEGGER_RTT_printf(0, "   Estimated elapsed time: %lu.%03lu seconds\n", 
-                                 estimated_time_ms / 1000, estimated_time_ms % 1000);
             }
 
             // Update last callback number every time callback ends
@@ -219,6 +240,9 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             {
                 SEGGER_RTT_printf(0, "   BUFFER OVERWRITE occurred - Data loss possible!\n");
                 SEGGER_RTT_printf(0, "   Suggestion: Process data faster or increase buffer size\n");
+                
+                // 오류 발생시에도 현재 버퍼 데이터 저장
+                save_audio_data_as_text(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES, g_data_callback_count);
             }
 
             break;
@@ -229,5 +253,66 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             SEGGER_RTT_printf(0, "[UNKNOWN] Unexpected PDM event: %d\n", p_args->event);
             break;
         }
+    }
+}
+
+
+// 오디오 데이터를 텍스트로 출력하는 함수
+void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number)
+{
+    if (!ENABLE_AUDIO_TEXT_OUTPUT) return;
+    
+    // 출력 간격 확인
+    if (callback_number % AUDIO_OUTPUT_INTERVAL != 0) return;
+    
+    SEGGER_RTT_printf(0, "\n=== AUDIO DATA CALLBACK #%lu ===\n", callback_number);
+    SEGGER_RTT_printf(0, "Timestamp: %lu ms\n", callback_number * PDM_CALLBACK_NUM_SAMPLES * 1000 / 16000);
+    SEGGER_RTT_printf(0, "Samples: %lu (Total: %lu)\n", sample_count, g_total_samples_saved);
+    
+    // 샘플 데이터 출력
+    for (uint32_t i = 0; i < sample_count; i++)
+    {
+        // 새 줄 시작
+        if (i % SAMPLES_PER_LINE == 0)
+        {
+            SEGGER_RTT_printf(0, "\nS[%04lu]: ", i);
+        }
+        
+        // 데이터 형식에 따른 출력
+        if (OUTPUT_FORMAT_HEX)
+        {
+            // 16진수 출력 (PDM 원시 데이터)
+            SEGGER_RTT_printf(0, "%08lX ", buffer[i]);
+        }
+        else
+        {
+            // 10진수 출력 (부호있는 정수)
+            int32_t signed_sample = (int32_t)buffer[i];
+            SEGGER_RTT_printf(0, "%8ld ", signed_sample);
+        }
+    }
+    
+    SEGGER_RTT_printf(0, "\n=== END AUDIO DATA ===\n\n");
+    
+    g_total_samples_saved += sample_count;
+}
+
+// CSV 형식으로 저장하는 함수 (선택사항)
+void save_audio_data_as_csv(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number)
+{
+    if (callback_number == 1)
+    {
+        // CSV 헤더 출력
+        SEGGER_RTT_printf(0, "Callback,Sample_Index,Timestamp_ms,Raw_Value,Signed_Value\n");
+    }
+    
+    for (uint32_t i = 0; i < sample_count; i++)
+    {
+        uint32_t global_sample_index = (callback_number - 1) * PDM_CALLBACK_NUM_SAMPLES + i;
+        uint32_t timestamp_ms = global_sample_index * 1000 / 16000; // 16kHz 기준
+        int32_t signed_value = (int32_t)buffer[i];
+        
+        SEGGER_RTT_printf(0, "%lu,%lu,%lu,0x%08lX,%ld\n",
+                         callback_number, global_sample_index, timestamp_ms, buffer[i], signed_value);
     }
 }

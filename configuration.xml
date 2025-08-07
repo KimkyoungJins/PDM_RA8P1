@@ -480,7 +480,7 @@
       <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority2"/>
       <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority3"/>
     </module>
-    <module id="module.driver.transfer_on_dmac.2087819864">
+    <module id="module.driver.transfer_on_dmac.731762218">
       <property id="module.driver.transfer.name" value="g_transfer0"/>
       <property id="module.driver.transfer.channel" value="0"/>
       <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
@@ -500,7 +500,7 @@
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.pdm_on_pdm.1216290756"/>
-      <stack module="module.driver.transfer_on_dmac.2087819864"/>
+      <stack module="module.driver.transfer_on_dmac.731762218"/>
     </context>
     <config id="config.driver.dmac">
       <property id="config.driver.dmac.param_checking_enable" value="config.driver.dmac.param_checking_enable.bsp"/>
