@@ -58,6 +58,11 @@ extern const pdm_cfg_t g_pdm0_cfg;
  */
 void r_pdm_basic_messaging_core0_example(void);
 
+void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number);
+void save_audio_data_as_csv(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number);
+
+
+
 /**
  * @brief PDM callback function
  * @param[in] p_args    Callback arguments
