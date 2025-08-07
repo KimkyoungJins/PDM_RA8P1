@@ -7,6 +7,7 @@
                         [0] = pdm_sdet_isr, /* PDM SDET (Sound detection interrupt) */
             [1] = pdm_dat_isr, /* PDM DAT2 (Data reception interrupt channel 2) */
             [2] = pdm_err_isr, /* PDM ERR2 (Error detection interrupt channel 2) */
+            [3] = dmac_int_isr, /* DMAC0 INT (DMAC0 transfer end) */
         };
         #if BSP_FEATURE_ICU_HAS_IELSR
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_NUM_ENTRIES] =
@@ -14,6 +15,7 @@
             [0] = BSP_PRV_VECT_ENUM(EVENT_PDM_SDET,GROUP0), /* PDM SDET (Sound detection interrupt) */
             [1] = BSP_PRV_VECT_ENUM(EVENT_PDM_DAT2,GROUP1), /* PDM DAT2 (Data reception interrupt channel 2) */
             [2] = BSP_PRV_VECT_ENUM(EVENT_PDM_ERR2,GROUP2), /* PDM ERR2 (Error detection interrupt channel 2) */
+            [3] = BSP_PRV_VECT_ENUM(EVENT_DMAC0_INT,GROUP3), /* DMAC0 INT (DMAC0 transfer end) */
         };
         #endif
         #endif

@@ -951,19 +951,19 @@ FSP Configuration
       Interrupt: Data Reception Interrupt Priority: Priority 2
       Interrupt: Error Detection Interrupt Priority: Priority 3
       
-    Instance "g_transfer0 Transfer (r_dmac) No ELC Trigger"
+    Instance "g_transfer0 Transfer (r_dmac) PDM DAT2 (Data reception interrupt channel 2)"
       Name: g_transfer0
       Channel: 0
-      Mode: Normal
+      Mode: Repeat-Block
       Transfer Size: 2 Bytes
-      Destination Address Mode: Fixed
+      Destination Address Mode: Incremented
       Source Address Mode: Fixed
-      Repeat Area (Unused in Normal Mode): Source
-      Number of Transfers: 1
-      Number of Blocks (Valid only in Repeat,Block or Repeat-Block Mode): 0
-      Activation Source: No ELC Trigger
+      Repeat Area (Unused in Normal Mode): Destination
+      Number of Transfers: 1024
+      Number of Blocks (Valid only in Repeat,Block or Repeat-Block Mode): 4
+      Activation Source: PDM DAT2 (Data reception interrupt channel 2)
       Callback: NULL
-      Transfer End Interrupt Priority: Disabled
+      Transfer End Interrupt Priority: Priority 5
       Interrupt Frequency: Interrupt after all transfers have completed
       Offset value (Valid only when address mode is \'Offset\'): 1
       Source Buffer Size: 1

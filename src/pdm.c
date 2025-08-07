@@ -171,6 +171,8 @@ void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t c
     g_total_samples_saved += sample_count;
 }
 
+
+
 void pdm0_callback(pdm_callback_args_t * p_args)
 {
     switch(p_args->event)
@@ -285,7 +287,7 @@ void r_pdm_basic_messaging_core0_example(void)
     SEGGER_RTT_printf(0, "================================================\n");
 
     // 더 짧은 시간 (10초) - 큰 데이터량을 고려
-    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS); 
+    R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_SECONDS); 
 
     SEGGER_RTT_printf(0, "\n================================================\n");
     SEGGER_RTT_printf(0, "Recording finished. Processing data...\n");

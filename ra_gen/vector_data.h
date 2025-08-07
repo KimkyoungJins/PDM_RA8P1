@@ -6,12 +6,13 @@
         #endif
 /* Number of interrupts allocated */
 #ifndef VECTOR_DATA_IRQ_COUNT
-#define VECTOR_DATA_IRQ_COUNT    (3)
+#define VECTOR_DATA_IRQ_COUNT    (4)
 #endif
 /* ISR prototypes */
 void pdm_sdet_isr(void);
 void pdm_dat_isr(void);
 void pdm_err_isr(void);
+void dmac_int_isr(void);
 
 /* Vector table allocations */
 #define VECTOR_NUMBER_PDM_SDET ((IRQn_Type) 0) /* PDM SDET (Sound detection interrupt) */
@@ -20,8 +21,10 @@ void pdm_err_isr(void);
 #define PDM_DAT2_IRQn          ((IRQn_Type) 1) /* PDM DAT2 (Data reception interrupt channel 2) */
 #define VECTOR_NUMBER_PDM_ERR2 ((IRQn_Type) 2) /* PDM ERR2 (Error detection interrupt channel 2) */
 #define PDM_ERR2_IRQn          ((IRQn_Type) 2) /* PDM ERR2 (Error detection interrupt channel 2) */
+#define VECTOR_NUMBER_DMAC0_INT ((IRQn_Type) 3) /* DMAC0 INT (DMAC0 transfer end) */
+#define DMAC0_INT_IRQn          ((IRQn_Type) 3) /* DMAC0 INT (DMAC0 transfer end) */
 /* The number of entries required for the ICU vector table. */
-#define BSP_ICU_VECTOR_NUM_ENTRIES (3)
+#define BSP_ICU_VECTOR_NUM_ENTRIES (4)
 
 #ifdef __cplusplus
         }
