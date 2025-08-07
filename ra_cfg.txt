@@ -895,7 +895,7 @@ FSP Configuration
       Input: Edge: Rising
       Input: PDM_CLK Frequency: 4000000 Hz
       Output: Bit Format: 20 Bits mode {1 Sign bit  and [18:0] bits of the buffer}
-      Output: Target Sampling Frequency (Hz): 32000
+      Output: Target Sampling Frequency (Hz): 16000
       Filter: Moving Average Mode: 1-order (filter is skipped)
       Filter: Low-pass Filter: Low-pass Filter Input Shift: No shift
       Filter: Low-pass Filter: LPF Coefficient h0(10): 0x0400

@@ -1,8 +1,8 @@
 #include "hal_data.h"
 #include "SEGGER_RTT/SEGGER_RTT.h"
 
-#define PDM_BUFFER_NUM_SAMPLES 2048
-#define PDM_CALLBACK_NUM_SAMPLES 512
+#define PDM_BUFFER_NUM_SAMPLES 4096
+#define PDM_CALLBACK_NUM_SAMPLES 1024
 #define PDM_MIC_STARTUP_TIME_US 35000 
 #define PDM_SDE_UPPER_LIMIT (uint32_t)10000  
 #define PDM_SDE_LOWER_LIMIT (uint32_t)-10000 
@@ -15,7 +15,7 @@
 #define OUTPUT_FORMAT_HEX 1             
 
 // ✅ 전체 데이터 저장을 위한 큰 버퍼
-#define MAX_TOTAL_SAMPLES 65536         // 64K 샘플 저장 (약 4초분)
+#define MAX_TOTAL_SAMPLES 160000         // 약 10초분
 uint32_t g_all_audio_data[MAX_TOTAL_SAMPLES];
 uint32_t g_total_collected_samples = 0;
 
@@ -109,7 +109,7 @@ void analyze_audio_data(uint32_t *buffer, uint32_t sample_count)
 {
     uint32_t min_val = 0xFFFFFFFF;
     uint32_t max_val = 0;
-    uint64_t sum = 0;
+    uint64_t sum = 0;  // 큰 수 처리를 위해 64비트
     uint32_t zero_count = 0;
     uint32_t negative_count = 0;
 
@@ -122,20 +122,24 @@ void analyze_audio_data(uint32_t *buffer, uint32_t sample_count)
         sum += sample;
         
         if (sample == 0) zero_count++;
-        if (sample & 0x80000) negative_count++;  // 20비트에서 음수 판별
+        if (sample & 0x80000) negative_count++;
     }
 
-    uint32_t average = (uint32_t)(sum / sample_count);
+    // ✅ 안전한 평균 계산
+    double average = (sample_count > 0) ? ((double)sum / (double)sample_count) : 0.0;
+    
+    // ✅ 안전한 백분율 계산
+    double zero_pct = (sample_count > 0) ? ((double)zero_count * 100.0 / (double)sample_count) : 0.0;
+    double neg_pct = (sample_count > 0) ? ((double)negative_count * 100.0 / (double)sample_count) : 0.0;
     
     SEGGER_RTT_printf(0, "\n=== AUDIO DATA ANALYSIS ===\n");
     SEGGER_RTT_printf(0, "Sample count: %lu\n", sample_count);
     SEGGER_RTT_printf(0, "Min value: 0x%08lX (%ld)\n", min_val, (int32_t)min_val);
     SEGGER_RTT_printf(0, "Max value: 0x%08lX (%ld)\n", max_val, (int32_t)max_val);
-    SEGGER_RTT_printf(0, "Average: 0x%08lX (%ld)\n", average, (int32_t)average);
-    SEGGER_RTT_printf(0, "Zero samples: %lu (%.1f%%)\n", zero_count, (float)zero_count * 100.0f / sample_count);
-    SEGGER_RTT_printf(0, "Negative samples: %lu (%.1f%%)\n", negative_count, (float)negative_count * 100.0f / sample_count);
+    SEGGER_RTT_printf(0, "Average: %.1f\n", average);
+    SEGGER_RTT_printf(0, "Zero samples: %lu (%.1f%%)\n", zero_count, zero_pct);
+    SEGGER_RTT_printf(0, "Negative samples: %lu (%.1f%%)\n", negative_count, neg_pct);
     SEGGER_RTT_printf(0, "Dynamic range: %lu\n", max_val - min_val);
-    SEGGER_RTT_printf(0, "==========================\n\n");
 }
 
 // 기존 함수 (간소화됨)
@@ -309,6 +313,6 @@ void r_pdm_basic_messaging_core0_example(void)
     SEGGER_RTT_printf(0, "Total samples collected: %lu\n", g_total_collected_samples);
     SEGGER_RTT_printf(0, "Errors encountered: %lu\n", g_error_count);
     SEGGER_RTT_printf(0, "Collection efficiency: %.1f%%\n", 
-                     (float)g_total_collected_samples * 100.0f / 
+                     (double)g_total_collected_samples * 100.0f / 
                      (g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES));
 }
