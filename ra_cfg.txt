@@ -891,7 +891,7 @@ FSP Configuration
       Channel: 2
       Input: Edge: Rising
       Input: PDM_CLK Frequency: 4000000 Hz
-      Output: Bit Format: 16 Bits mode {1 Sign bit  and [18:4] bits of the buffer}
+      Output: Bit Format: 20 Bits mode {1 Sign bit  and [18:0] bits of the buffer}
       Output: Target Sampling Frequency (Hz): 32000
       Filter: Moving Average Mode: 1-order (filter is skipped)
       Filter: Low-pass Filter: Low-pass Filter Input Shift: No shift

@@ -64,7 +64,7 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
 
 /** PDM interface configuration */
 const pdm_cfg_t g_pdm0_cfg =
-{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_16_BITS_4_18, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
+{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_20_BITS_0_18, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
 
 #define RA_NOT_DEFINED (1)
 #if (RA_NOT_DEFINED == RA_NOT_DEFINED)

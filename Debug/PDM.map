@@ -276,7 +276,7 @@
 22000400 22000400       2c     4         ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o:(.ram_noinit)
 22000400 22000400       2c     1                 g_clock_freq
 2200042c 2200042c        0     1         __ram_noinit$$Limit = .
-22000430 22000430     2974    16 __ram_zero$$
+22000430 22000430     1974    16 __ram_zero$$
 22000430 22000430        0     1         __ram_zero$$Base = .
 22000430 22000430       a8     4         ./src/SEGGER_RTT/SEGGER_RTT.o:(.bss._SEGGER_RTT)
 22000430 22000430       a8     1                 _SEGGER_RTT
@@ -284,49 +284,49 @@
 220004d8 220004d8      800     1                 _acUpBuffer
 22000cd8 22000cd8       10     1         ./src/SEGGER_RTT/SEGGER_RTT.o:(.bss._acDownBuffer)
 22000cd8 22000cd8       10     1                 _acDownBuffer
-22000ce8 22000ce8     2000     4         ./src/pdm.o:(.bss.g_pdm0_buffer)
-22000ce8 22000ce8     2000     1                 g_pdm0_buffer
-22002ce8 22002ce8        4     4         ./src/pdm.o:(.bss.g_callback_end_count)
-22002ce8 22002ce8        4     1                 g_callback_end_count
-22002cec 22002cec        1     4         ./src/pdm.o:(.bss.g_callback_start_count)
-22002cec 22002cec        1     1                 g_callback_start_count
-22002cf0 22002cf0        4     4         ./src/pdm.o:(.bss.g_data_callback_count)
-22002cf0 22002cf0        4     1                 g_data_callback_count
-22002cf4 22002cf4        4     4         ./src/pdm.o:(.bss.g_sound_detection_count)
-22002cf4 22002cf4        4     1                 g_sound_detection_count
-22002cf8 22002cf8        4     4         ./src/pdm.o:(.bss.g_error_count)
-22002cf8 22002cf8        4     1                 g_error_count
-22002cfc 22002cfc        8     4         ./ra_gen/common_data.o:(.bss.g_ioport_ctrl)
-22002cfc 22002cfc        8     1                 g_ioport_ctrl
-22002d04 22002d04       2c     4         ./ra_gen/hal_data.o:(.bss.g_pdm0_ctrl)
-22002d04 22002d04       2c     1                 g_pdm0_ctrl
-22002d30 22002d30       54     4         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.bss.g_bsp_group_irq_sources)
-22002d30 22002d30       54     1                 g_bsp_group_irq_sources
-22002d84 22002d84        4     4         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.bss.g_protect_pfswe_counter)
-22002d84 22002d84        4     1                 g_protect_pfswe_counter
-22002d88 22002d88        c     4         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.bss.gp_renesas_isr_context)
-22002d88 22002d88        c     1                 gp_renesas_isr_context
-22002d94 22002d94        8     2         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.bss.g_protect_counters)
-22002d94 22002d94        8     1                 g_protect_counters
-22002d9c 22002d9c        4     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.bss.SystemCoreClock)
-22002d9c 22002d9c        4     1                 SystemCoreClock
-22002da0 22002da0        4    16         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.bss)
-22002da0 22002da0        4     1                 __tls
-22002da4 22002da4        0     1         __ram_zero$$Limit = .
-22002da4 22002da4        0     1 __ram_tdata$$
-22002da4 22002da4        0     1         __ram_tdata$$Base = .
-22002da4 22002da4        0     1         __ram_tdata$$Load = LOADADDR ( __ram_tdata$$ )
-22002da4 22002da4        0     1         __ram_tdata$$Limit = .
-22002da4 22002da4        0     1 __ram_tbss$$
-22002da4 22002da4        0     1         __ram_tbss$$Base = .
-22002da4 22002da4        0     1         __ram_tbss$$Limit = .
-22002da8 22002da8        0     1 __ram_thread_stack$$
-22002da8 22002da8        0     1         __ram_thread_stack$$Base = .
-22002da8 22002da8        0     1         __ram_thread_stack$$Limit = .
-22004000 22004000        0     1 .ram.endof
-22004000 22004000        0     1         __ddsc_RAM_END = .
-22004000 22004000        0     1 .ram.flat_nsc
-22004000 22004000        0     1         __sau_ddsc_RAM_NSC = .
+22000ce8 22000ce8     1000     4         ./src/pdm.o:(.bss.g_pdm0_buffer)
+22000ce8 22000ce8     1000     1                 g_pdm0_buffer
+22001ce8 22001ce8        4     4         ./src/pdm.o:(.bss.g_callback_end_count)
+22001ce8 22001ce8        4     1                 g_callback_end_count
+22001cec 22001cec        1     4         ./src/pdm.o:(.bss.g_callback_start_count)
+22001cec 22001cec        1     1                 g_callback_start_count
+22001cf0 22001cf0        4     4         ./src/pdm.o:(.bss.g_data_callback_count)
+22001cf0 22001cf0        4     1                 g_data_callback_count
+22001cf4 22001cf4        4     4         ./src/pdm.o:(.bss.g_sound_detection_count)
+22001cf4 22001cf4        4     1                 g_sound_detection_count
+22001cf8 22001cf8        4     4         ./src/pdm.o:(.bss.g_error_count)
+22001cf8 22001cf8        4     1                 g_error_count
+22001cfc 22001cfc        8     4         ./ra_gen/common_data.o:(.bss.g_ioport_ctrl)
+22001cfc 22001cfc        8     1                 g_ioport_ctrl
+22001d04 22001d04       2c     4         ./ra_gen/hal_data.o:(.bss.g_pdm0_ctrl)
+22001d04 22001d04       2c     1                 g_pdm0_ctrl
+22001d30 22001d30       54     4         ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o:(.bss.g_bsp_group_irq_sources)
+22001d30 22001d30       54     1                 g_bsp_group_irq_sources
+22001d84 22001d84        4     4         ./ra/fsp/src/bsp/mcu/all/bsp_io.o:(.bss.g_protect_pfswe_counter)
+22001d84 22001d84        4     1                 g_protect_pfswe_counter
+22001d88 22001d88        c     4         ./ra/fsp/src/bsp/mcu/all/bsp_irq.o:(.bss.gp_renesas_isr_context)
+22001d88 22001d88        c     1                 gp_renesas_isr_context
+22001d94 22001d94        8     2         ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o:(.bss.g_protect_counters)
+22001d94 22001d94        8     1                 g_protect_counters
+22001d9c 22001d9c        4     4         ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o:(.bss.SystemCoreClock)
+22001d9c 22001d9c        4     1                 SystemCoreClock
+22001da0 22001da0        4    16         /Applications/Renesas e2 studio with RA FSP v6.0.0/toolchains/LLVM-ET-Arm-18.1.3-Darwin-universal/bin/../lib/clang-runtimes/arm-none-eabi/armv8.1m.main_hard_fpdp_nomve_exn_rtti/lib/libc.a(libc_picolib_machine_arm_read_tp.S.o):(.bss)
+22001da0 22001da0        4     1                 __tls
+22001da4 22001da4        0     1         __ram_zero$$Limit = .
+22001da4 22001da4        0     1 __ram_tdata$$
+22001da4 22001da4        0     1         __ram_tdata$$Base = .
+22001da4 22001da4        0     1         __ram_tdata$$Load = LOADADDR ( __ram_tdata$$ )
+22001da4 22001da4        0     1         __ram_tdata$$Limit = .
+22001da4 22001da4        0     1 __ram_tbss$$
+22001da4 22001da4        0     1         __ram_tbss$$Base = .
+22001da4 22001da4        0     1         __ram_tbss$$Limit = .
+22001da8 22001da8        0     1 __ram_thread_stack$$
+22001da8 22001da8        0     1         __ram_thread_stack$$Base = .
+22001da8 22001da8        0     1         __ram_thread_stack$$Limit = .
+22002000 22002000        0     1 .ram.endof
+22002000 22002000        0     1         __ddsc_RAM_END = .
+22002000 22002000        0     1 .ram.flat_nsc
+22002000 22002000        0     1         __sau_ddsc_RAM_NSC = .
  2000070  2000070     31d6    16 __flash_readonly$$
  2000070  2000070        0     1         __flash_readonly$$Base = .
  2000070  2000070      186     2         ./src/SEGGER_RTT/SEGGER_RTT.o:(.text.SEGGER_RTT_WriteNoLock)

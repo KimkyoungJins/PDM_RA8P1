@@ -418,8 +418,8 @@
       <property id="module.driver.pdm.name" value="g_pdm0"/>
       <property id="module.driver.pdm.channel" value="2"/>
       <property id="module.driver.pdm.edge" value="module.driver.pdm.egde.pdm_egde_rise"/>
-      <property id="module.driver.pdm.clock_div" value="module.driver.pdm.clock_div.clock_div_2"/>
-      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width_16bits_4_18"/>
+      <property id="module.driver.pdm.clock_div" value="module.driver.pdm.clock_div.pdm_clock_div_2"/>
+      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width_20bits_0_18"/>
       <property id="module.driver.pdm.pdm_output_sampling_freq" value="32000"/>
       <property id="module.driver.pdm.moving_average_mode" value="module.driver.pdm.moving_average_mode.order_1"/>
       <property id="module.driver.pdm.lpf_shift" value="module.driver.pdm.lpf_shift.shift_0"/>

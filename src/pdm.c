@@ -1,7 +1,7 @@
 #include "hal_data.h"
 #include "SEGGER_RTT/SEGGER_RTT.h"
 
-#define PDM_BUFFER_NUM_SAMPLES 2048 
+#define PDM_BUFFER_NUM_SAMPLES 1024
 #define PDM_CALLBACK_NUM_SAMPLES PDM_BUFFER_NUM_SAMPLES / 2 
 #define PDM_MIC_STARTUP_TIME_US 35000 
 #define PDM_SDE_UPPER_LIMIT (uint32_t)10000  
@@ -82,7 +82,7 @@ void r_pdm_basic_messaging_core0_example(void)
     SEGGER_RTT_printf(0, "Recording for 10 seconds...\n");
 
     // Wait for 10 seconds
-    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS); 
+    R_BSP_SoftwareDelay(1000000000, BSP_DELAY_UNITS_MICROSECONDS); 
 
     SEGGER_RTT_printf(0, "\n================================================\n");
 
