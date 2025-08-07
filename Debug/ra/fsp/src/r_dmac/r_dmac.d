@@ -1,5 +1,5 @@
-ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o: \
-  ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c \
+ra/fsp/src/r_dmac/r_dmac.o: ../ra/fsp/src/r_dmac/r_dmac.c \
+  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/bsp_api.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/fsp_common_api.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/fsp_version.h \
@@ -48,17 +48,9 @@ ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o: \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../inc/../../fsp/src/bsp/mcu/all/bsp_compiler_support.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_delay.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_mcu_api.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/src/pdm.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_gen/hal_data.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_gen/common_data.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_ioport.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_ioport_api.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_ioport_cfg.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_pdm.h
+  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_dmac_cfg.h
+/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/bsp_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/fsp_common_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/fsp_version.h:
@@ -107,14 +99,5 @@ bsp_linker_info.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../inc/../../fsp/src/bsp/mcu/all/bsp_compiler_support.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_delay.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_mcu_api.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/src/pdm.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra_gen/hal_data.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra_gen/common_data.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_ioport.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_ioport_api.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_ioport_cfg.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_pdm.h:
+/Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_dmac_cfg.h:

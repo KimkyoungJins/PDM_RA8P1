@@ -875,7 +875,10 @@ FSP Configuration
     
   Module "PDM (r_pdm)"
     Parameter Checking: Enabled
-    DMAC Support: Disabled
+    DMAC Support: Enabled
+    
+  Module "Transfer (r_dmac)"
+    Parameter Checking: Default (BSP)
     
   HAL
     Instance "g_ioport I/O Port (r_ioport)"
@@ -947,4 +950,21 @@ FSP Configuration
       Interrupt: Sound Detection Interrupt Priority: Priority 1
       Interrupt: Data Reception Interrupt Priority: Priority 2
       Interrupt: Error Detection Interrupt Priority: Priority 3
+      
+    Instance "g_transfer0 Transfer (r_dmac) No ELC Trigger"
+      Name: g_transfer0
+      Channel: 0
+      Mode: Normal
+      Transfer Size: 2 Bytes
+      Destination Address Mode: Fixed
+      Source Address Mode: Fixed
+      Repeat Area (Unused in Normal Mode): Source
+      Number of Transfers: 1
+      Number of Blocks (Valid only in Repeat,Block or Repeat-Block Mode): 0
+      Activation Source: No ELC Trigger
+      Callback: NULL
+      Transfer End Interrupt Priority: Disabled
+      Interrupt Frequency: Interrupt after all transfers have completed
+      Offset value (Valid only when address mode is \'Offset\'): 1
+      Source Buffer Size: 1
       

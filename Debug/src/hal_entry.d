@@ -53,8 +53,9 @@ src/hal_entry.o: ../src/hal_entry.c \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_ioport_api.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_ioport_cfg.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h \
+  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h \
+  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_pdm.h \
   ../src/SEGGER_RTT/SEGGER_RTT.h ../src/SEGGER_RTT/SEGGER_RTT_Conf.h \
   ../src/pdm.h
@@ -112,8 +113,9 @@ bsp_linker_info.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_ioport_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_ioport_cfg.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h:
+/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h:
+/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_pdm.h:
 ../src/SEGGER_RTT/SEGGER_RTT.h:
 ../src/SEGGER_RTT/SEGGER_RTT_Conf.h:

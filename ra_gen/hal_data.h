@@ -4,9 +4,21 @@
 #include <stdint.h>
 #include "bsp_api.h"
 #include "common_data.h"
+#include "r_dmac.h"
+#include "r_transfer_api.h"
 #include "r_pdm_api.h"
 #include "r_pdm.h"
 FSP_HEADER
+/* Transfer on DMAC Instance. */
+extern const transfer_instance_t g_transfer0;
+
+/** Access the DMAC instance using these structures when calling API functions directly (::p_api is not used). */
+extern dmac_instance_ctrl_t g_transfer0_ctrl;
+extern const transfer_cfg_t g_transfer0_cfg;
+
+#ifndef NULL
+void NULL(transfer_callback_args_t *p_args);
+#endif
 #define PDM2_CALCULATED_SINCRNG_VALUE (5)
 #define PDM2_CALCULATED_SINCDEC_VALUE (124)
 #define PDM2_FILTER_SETTLING_TIME_US  (1662)

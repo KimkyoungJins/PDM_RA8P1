@@ -401,6 +401,10 @@
       <description>PDM</description>
       <originalPack>Renesas.RA.6.0.0.pack</originalPack>
     </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_dmac" variant="" vendor="Renesas" version="6.0.0">
+      <description>Direct Memory Access Controller</description>
+      <originalPack>Renesas.RA.6.0.0.pack</originalPack>
+    </component>
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
@@ -476,16 +480,37 @@
       <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority2"/>
       <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority3"/>
     </module>
+    <module id="module.driver.transfer_on_dmac.2087819864">
+      <property id="module.driver.transfer.name" value="g_transfer0"/>
+      <property id="module.driver.transfer.channel" value="0"/>
+      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
+      <property id="module.driver.transfer.size" value="module.driver.transfer.size.size_2_byte"/>
+      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
+      <property id="module.driver.transfer.repeat_area" value="module.driver.transfer.repeat_area.repeat_area_source"/>
+      <property id="module.driver.transfer.length" value="1"/>
+      <property id="module.driver.transfer.num_blocks" value="0"/>
+      <property id="module.driver.transfer.activation_event" value="enum.elc_none.none"/>
+      <property id="module.driver.transfer.p_callback" value="NULL"/>
+      <property id="module.driver.transfer.ipl" value="_disabled"/>
+      <property id="module.driver.transfer.interrupt" value="module.driver.transfer.interrupt.interrupt_end"/>
+      <property id="module.driver.transfer.offset" value="1"/>
+      <property id="module.driver.transfer.src.buffer" value="1"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.pdm_on_pdm.1216290756"/>
+      <stack module="module.driver.transfer_on_dmac.2087819864"/>
     </context>
+    <config id="config.driver.dmac">
+      <property id="config.driver.dmac.param_checking_enable" value="config.driver.dmac.param_checking_enable.bsp"/>
+    </config>
     <config id="config.driver.ioport">
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
     </config>
     <config id="config.driver.pdm">
       <property id="config.driver.pdm.param_checking_enable" value="config.driver.pdm.param_checking_enable.enabled"/>
-      <property id="config.driver.pdm.dmac_enable" value="config.driver.pdm.dmac_enable.disabled"/>
+      <property id="config.driver.pdm.dmac_enable" value="config.driver.pdm.dmac_enable.enabled"/>
     </config>
   </raModuleConfiguration>
   <raPinConfiguration>

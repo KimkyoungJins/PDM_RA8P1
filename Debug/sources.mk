@@ -40,6 +40,7 @@ ra/board/ra8p1_ek \
 ra/fsp/src/bsp/cmsis/Device/RENESAS/Source \
 ra/fsp/src/bsp/mcu/all \
 ra/fsp/src/bsp/mcu/ra8p1 \
+ra/fsp/src/r_dmac \
 ra/fsp/src/r_ioport \
 ra/fsp/src/r_pdm \
 ra_gen \
