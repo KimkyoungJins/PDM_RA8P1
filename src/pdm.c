@@ -47,10 +47,9 @@ void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count)
     }
 }
 
-// ✅ 수집된 모든 데이터를 보기 좋게 출력
+// ✅ 수집된 모든 데이터를 순수 형식으로 출력 (수정됨)
 void dump_all_collected_data(void)
 {
-
     SEGGER_RTT_printf(0, "\n");
     for(int i = 0; i < 60; i++){
         SEGGER_RTT_printf(0, "=");
@@ -70,33 +69,41 @@ void dump_all_collected_data(void)
     }
     SEGGER_RTT_printf(0, "\n");
     
+    SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT START ***\n");
 
-    // 전체 데이터 출력
+    // ✅ 순수 데이터만 출력 (주소나 "00>" 없음)
     for (uint32_t i = 0; i < g_total_collected_samples; i++)
     {
         // 새로운 줄 시작 (16개씩)
-        if (i % 16 == 0)
+        if (i % 16 == 0 && i > 0)
         {
-            SEGGER_RTT_printf(0, "\n[%06lu]: ", i);
+            SEGGER_RTT_printf(0, "\n");
         }
-        // 8개마다 공백 추가 (가독성)
-        else if (i % 8 == 0)
+        // 8개마다 공백 추가 (가독성) - 첫 번째가 아닐 때만
+        else if (i % 8 == 0 && i > 0)
         {
             SEGGER_RTT_printf(0, "  ");
         }
+        
+        // 데이터 앞에 공백 추가 (첫 번째 제외)
+        if (i > 0) {
+            SEGGER_RTT_printf(0, " ");
+        }
 
-        SEGGER_RTT_printf(0, "%08lX ", g_all_audio_data[i]);
+        SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
 
-        // 1000줄마다 진행 상황 표시 (대용량 데이터 처리)
+        // 진행 상황 표시 시에도 깔끔하게
         if ((i + 1) % 16000 == 0)
         {
-            SEGGER_RTT_printf(0, "\n... Progress: %lu / %lu samples (%d%%) ...\n", 
+            SEGGER_RTT_printf(0, "\n... Progress: %lu / %lu samples (%d%%) ...", 
                              i + 1, g_total_collected_samples, 
                              (int)((i + 1) * 100 / g_total_collected_samples));
         }
     }
 
-    SEGGER_RTT_printf(0, "\n\n=== END COMPLETE DATA DUMP ===\n");
+    SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT END ***\n");
+    
+    SEGGER_RTT_printf(0, "\n=== END COMPLETE DATA DUMP ===\n");
     SEGGER_RTT_printf(0, "\n");
     for(int i = 0; i < 60; i++){
         SEGGER_RTT_printf(0, "=");
@@ -171,8 +178,7 @@ void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t c
     g_total_samples_saved += sample_count;
 }
 
-
-
+// 나머지 코드는 동일...
 void pdm0_callback(pdm_callback_args_t * p_args)
 {
     switch(p_args->event)
@@ -287,7 +293,7 @@ void r_pdm_basic_messaging_core0_example(void)
     SEGGER_RTT_printf(0, "================================================\n");
 
     // 더 짧은 시간 (10초) - 큰 데이터량을 고려
-    R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_SECONDS); 
+    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS); 
 
     SEGGER_RTT_printf(0, "\n================================================\n");
     SEGGER_RTT_printf(0, "Recording finished. Processing data...\n");
