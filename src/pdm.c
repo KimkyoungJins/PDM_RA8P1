@@ -8,14 +8,14 @@
 #define PDM_SDE_LOWER_LIMIT (uint32_t)-10000 
 #define PDM0_FILTER_SETTLING_TIME_US (25000U)
 
-// 텍스트 출력 설정
+// Text output settings
 #define ENABLE_AUDIO_TEXT_OUTPUT 1      
 #define AUDIO_OUTPUT_INTERVAL 10        
 #define SAMPLES_PER_LINE 8              
 #define OUTPUT_FORMAT_HEX 1             
 
-// ✅ 전체 데이터 저장을 위한 큰 버퍼
-#define MAX_TOTAL_SAMPLES 160000         // 약 10초분
+// Complete data storage buffer
+#define MAX_TOTAL_SAMPLES 160000         // About 10 seconds
 uint32_t g_all_audio_data[MAX_TOTAL_SAMPLES];
 uint32_t g_total_collected_samples = 0;
 
@@ -23,7 +23,7 @@ uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
 
 // Statistics counters
 static uint32_t g_sound_detection_count = 0;
-static uint32_t g_data_callback_count = 0;
+static uint32_t g_data_callback_count = 0; 
 static uint32_t g_error_count = 0;
 static uint32_t g_total_samples_saved = 0;
 
@@ -31,13 +31,14 @@ static uint32_t g_total_samples_saved = 0;
 static uint32_t g_callback_start_count = 0;
 static uint32_t g_callback_end_count = 0;
 
-// 함수 선언
+// Function declarations
 void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number);
 void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count);
 void dump_all_collected_data(void);
 void analyze_audio_data(uint32_t *buffer, uint32_t sample_count);
+void r_pdm_basic_messaging_core0_example(void);
 
-// ✅ 모든 오디오 데이터를 큰 버퍼에 수집
+// Collect all audio data into large buffer
 void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count)
 {
     for (uint32_t i = 0; i < sample_count && g_total_collected_samples < MAX_TOTAL_SAMPLES; i++)
@@ -47,7 +48,7 @@ void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count)
     }
 }
 
-// ✅ 수집된 모든 데이터를 순수 형식으로 출력 (수정됨)
+// Output all collected data in pure format for Python processing
 void dump_all_collected_data(void)
 {
     SEGGER_RTT_printf(0, "\n");
@@ -62,6 +63,8 @@ void dump_all_collected_data(void)
                      g_total_collected_samples * 1000 / 16000 / 1000,
                      (g_total_collected_samples * 1000 / 16000) % 1000);
     SEGGER_RTT_printf(0, "Data format: 32-bit hex (20-bit effective)\n");
+    SEGGER_RTT_printf(0, "Sample rate: 16000 Hz\n");
+    SEGGER_RTT_printf(0, "Bit depth: 20-bit PDM -> 16-bit PCM\n");
     
     SEGGER_RTT_printf(0, "\n");
     for(int i = 0; i < 60; i++){
@@ -71,31 +74,31 @@ void dump_all_collected_data(void)
     
     SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT START ***\n");
 
-    // ✅ 순수 데이터만 출력 (주소나 "00>" 없음)
+    // Pure data output (no addresses or prefixes) - Python-friendly format
     for (uint32_t i = 0; i < g_total_collected_samples; i++)
     {
-        // 새로운 줄 시작 (16개씩)
+        // New line every 16 samples
         if (i % 16 == 0 && i > 0)
         {
             SEGGER_RTT_printf(0, "\n");
         }
-        // 8개마다 공백 추가 (가독성) - 첫 번째가 아닐 때만
+        // Space every 8 samples for readability
         else if (i % 8 == 0 && i > 0)
         {
             SEGGER_RTT_printf(0, "  ");
         }
         
-        // 데이터 앞에 공백 추가 (첫 번째 제외)
+        // Add space before data (except first)
         if (i > 0) {
             SEGGER_RTT_printf(0, " ");
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
 
-        // 진행 상황 표시 시에도 깔끔하게
+        // Progress indicator for large data
         if ((i + 1) % 16000 == 0)
         {
-            SEGGER_RTT_printf(0, "\n... Progress: %lu / %lu samples (%d%%) ...", 
+            SEGGER_RTT_printf(0, "\n... Progress: %lu / %lu samples (%d%%) ...\n",
                              i + 1, g_total_collected_samples, 
                              (int)((i + 1) * 100 / g_total_collected_samples));
         }
@@ -111,12 +114,12 @@ void dump_all_collected_data(void)
     SEGGER_RTT_printf(0, "\n");
 }
 
-// ✅ 오디오 데이터 분석 (통계)
+// Audio data analysis (statistics)
 void analyze_audio_data(uint32_t *buffer, uint32_t sample_count)
 {
     uint32_t min_val = 0xFFFFFFFF;
     uint32_t max_val = 0;
-    uint64_t sum = 0;  // 큰 수 처리를 위해 64비트
+    uint64_t sum = 0;  // 64-bit for large number handling
     uint32_t zero_count = 0;
     uint32_t negative_count = 0;
 
@@ -132,10 +135,10 @@ void analyze_audio_data(uint32_t *buffer, uint32_t sample_count)
         if (sample & 0x80000) negative_count++;
     }
 
-    // ✅ 안전한 평균 계산
+    // Safe average calculation
     double average = (sample_count > 0) ? ((double)sum / (double)sample_count) : 0.0;
     
-    // ✅ 안전한 백분율 계산
+    // Safe percentage calculation
     double zero_pct = (sample_count > 0) ? ((double)zero_count * 100.0 / (double)sample_count) : 0.0;
     double neg_pct = (sample_count > 0) ? ((double)negative_count * 100.0 / (double)sample_count) : 0.0;
     
@@ -147,9 +150,11 @@ void analyze_audio_data(uint32_t *buffer, uint32_t sample_count)
     SEGGER_RTT_printf(0, "Zero samples: %lu (%.1f%%)\n", zero_count, zero_pct);
     SEGGER_RTT_printf(0, "Negative samples: %lu (%.1f%%)\n", negative_count, neg_pct);
     SEGGER_RTT_printf(0, "Dynamic range: %lu\n", max_val - min_val);
+    SEGGER_RTT_printf(0, "Signal quality: %s\n",
+                     (max_val - min_val > 1000) ? "Good" : "Low");
 }
 
-// 기존 함수 (간소화됨)
+// Legacy function (simplified)
 void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number)
 {
     if (!ENABLE_AUDIO_TEXT_OUTPUT) return;
@@ -157,7 +162,7 @@ void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t c
     
     SEGGER_RTT_printf(0, "\n=== AUDIO DATA CALLBACK #%lu ===\n", callback_number);
     
-    // 처음 32개 샘플만 실시간 출력 (성능 최적화)
+    // Show only first 32 samples for real-time output (performance optimization)
     uint32_t display_count = (sample_count > 32) ? 32 : sample_count;
     
     for (uint32_t i = 0; i < display_count; i++)
@@ -178,7 +183,7 @@ void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t c
     g_total_samples_saved += sample_count;
 }
 
-// 나머지 코드는 동일...
+// ULTRA-OPTIMIZED callback function for maximum performance
 void pdm0_callback(pdm_callback_args_t * p_args)
 {
     switch(p_args->event)
@@ -186,7 +191,6 @@ void pdm0_callback(pdm_callback_args_t * p_args)
         case PDM_EVENT_SOUND_DETECTION:
         {
             g_sound_detection_count++;
-            SEGGER_RTT_printf(0, "SOUND DETECTED! (#%lu)\n", g_sound_detection_count);
             break;
         }
 
@@ -194,37 +198,16 @@ void pdm0_callback(pdm_callback_args_t * p_args)
         {
             g_data_callback_count++;
 
-            if (g_data_callback_count == 1)
-            {
-                g_callback_start_count = g_data_callback_count;
-                SEGGER_RTT_printf(0, "First callback started! Data collection begins...\n");
-            }
-
-            // ✅ 모든 데이터를 큰 버퍼에 수집
+            // CRITICAL: Only fast data collection!
             collect_all_audio_data(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES);
             
-            // 실시간 샘플 출력
-            save_audio_data_as_text(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES, g_data_callback_count);
+            // REMOVED: No real-time text output (causes callback delay)
+            // REMOVED: No complex analysis in callback (causes timing issues)
 
-            // 주기적 상태 보고
+            // Minimal progress indication - ONLY every 100 callbacks (6.4 seconds)
             if (g_data_callback_count % 100 == 0)
             {
-                SEGGER_RTT_printf(0, "\n[PROGRESS] Callback #%lu\n", g_data_callback_count);
-                SEGGER_RTT_printf(0, "   Collected: %lu / %lu samples (%.1f%%)\n", 
-                                 g_total_collected_samples, MAX_TOTAL_SAMPLES,
-                                 (float)g_total_collected_samples * 100.0f / MAX_TOTAL_SAMPLES);
-                                 
-                // 현재 데이터 분석
-                analyze_audio_data(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES);
-            }
-
-            g_callback_end_count = g_data_callback_count;
-
-            // 버퍼가 다 찬 경우 조기 종료
-            if (g_total_collected_samples >= MAX_TOTAL_SAMPLES - PDM_CALLBACK_NUM_SAMPLES)
-            {
-                SEGGER_RTT_printf(0, "\n*** COLLECTION BUFFER FULL - STOPPING EARLY ***\n");
-                // 여기서 PDM을 중단하거나 플래그를 설정할 수 있음
+                SEGGER_RTT_printf(0, ".");
             }
 
             break;
@@ -233,94 +216,79 @@ void pdm0_callback(pdm_callback_args_t * p_args)
         case PDM_EVENT_ERROR:
         {
             g_error_count++;
-            SEGGER_RTT_printf(0, "\n[ERROR #%lu] PDM Error (Flags: 0x%lX)\n",
-                             g_error_count, (uint32_t)p_args->error);
-
-            if (p_args->error & PDM_ERROR_BUFFER_OVERWRITE)
-            {
-                SEGGER_RTT_printf(0, "   BUFFER OVERWRITE - Data may be corrupted!\n");
-                // 에러 발생시에도 데이터 수집 계속
-                collect_all_audio_data(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES);
-            }
+            // Continue data collection even on error
+            collect_all_audio_data(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES);
             break;
         }
 
         default:
-            SEGGER_RTT_printf(0, "[UNKNOWN] PDM event: %d\n", p_args->event);
             break;
     }
 }
 
+// Main function
 void r_pdm_basic_messaging_core0_example(void)
 {
-    // RTT initialization
     SEGGER_RTT_Init();
-    SEGGER_RTT_printf(0, "\n=== PDM Microphone Complete Data Collection ===\n");
-    SEGGER_RTT_printf(0, "Max collection capacity: %lu samples (%.1f seconds)\n", 
-                     MAX_TOTAL_SAMPLES, (float)MAX_TOTAL_SAMPLES / 16000.0f);
+    SEGGER_RTT_printf(0, "\n=== PDM OPTIMIZED RECORDING START ===\n");
 
-    /* Open PDM instance. */
+    /* PDM initialization */
     fsp_err_t err = R_PDM_Open(&g_pdm0_ctrl, &g_pdm0_cfg);
-    if (FSP_SUCCESS != err)
-    {
+    if (FSP_SUCCESS != err) {
         SEGGER_RTT_printf(0, "PDM Open FAILED: 0x%X\n", err);
         return;
     }
     SEGGER_RTT_printf(0, "PDM Open: SUCCESS\n");
 
-    /* Wait for PDM filters to settle. */
-    SEGGER_RTT_printf(0, "Filter settling (%d ms)...\n",
-                     (PDM0_FILTER_SETTLING_TIME_US + PDM_MIC_STARTUP_TIME_US) / 1000);
-    R_BSP_SoftwareDelay(PDM0_FILTER_SETTLING_TIME_US + PDM_MIC_STARTUP_TIME_US, 
+    /* Filter stabilization wait */
+    SEGGER_RTT_printf(0, "Filter stabilizing...\n");
+    R_BSP_SoftwareDelay(PDM0_FILTER_SETTLING_TIME_US + PDM_MIC_STARTUP_TIME_US,
                         BSP_DELAY_UNITS_MICROSECONDS);
 
-    /* Enable sound detection */
+    /* Sound detection enable */
     pdm_sound_detection_setting_t sound_detection_setting = {
         .sound_detection_lower_limit = PDM_SDE_LOWER_LIMIT,
         .sound_detection_upper_limit = PDM_SDE_UPPER_LIMIT
     };
     R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
 
-    /* Start receiving PDM data. */
+    /* PDM start */
     err = R_PDM_Start(&g_pdm0_ctrl, g_pdm0_buffer, sizeof(g_pdm0_buffer), PDM_CALLBACK_NUM_SAMPLES);
-    if (FSP_SUCCESS != err)
-    {
+    if (FSP_SUCCESS != err) {
         SEGGER_RTT_printf(0, "PDM Start FAILED: 0x%X\n", err);
         return;
     }
 
-    SEGGER_RTT_printf(0, "Recording started! Collecting all data...\n");
-    SEGGER_RTT_printf(0, "================================================\n");
+    SEGGER_RTT_printf(0, "Recording started! (10 seconds)\n");
+    SEGGER_RTT_printf(0, "Progress: ");
 
-    // 더 짧은 시간 (10초) - 큰 데이터량을 고려
-    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS); 
+    // EXACTLY 10 seconds wait
+    R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS);
 
-    SEGGER_RTT_printf(0, "\n================================================\n");
-    SEGGER_RTT_printf(0, "Recording finished. Processing data...\n");
+    SEGGER_RTT_printf(0, "\nRecording completed!\n");
 
-    /* Stop PDM */
+    /* PDM stop */
     R_PDM_Stop(&g_pdm0_ctrl);
     R_PDM_Close(&g_pdm0_ctrl);
 
-    // ✅ 최종 분석
-    if (g_total_collected_samples > 0)
-    {
-        SEGGER_RTT_printf(0, "\n=== FINAL ANALYSIS ===\n");
+    // Post-recording analysis
+    SEGGER_RTT_printf(0, "\n=== POST-RECORDING ANALYSIS ===\n");
+    SEGGER_RTT_printf(0, "Total callbacks: %lu\n", g_data_callback_count);
+    SEGGER_RTT_printf(0, "Expected callbacks: %.1f\n", 10000.0f / 64.0f);
+    SEGGER_RTT_printf(0, "Success rate: %.1f%%\n",
+                     (float)g_data_callback_count * 100.0f / (10000.0f / 64.0f));
+    SEGGER_RTT_printf(0, "Errors occurred: %lu\n", g_error_count);
+    SEGGER_RTT_printf(0, "Actual recording time: %.2f seconds\n",
+                     (float)g_total_collected_samples / 16000.0f);
+
+    if (g_total_collected_samples > 0) {
         analyze_audio_data(g_all_audio_data, g_total_collected_samples);
     }
 
-    // ✅ 모든 수집된 데이터 출력
-    SEGGER_RTT_printf(0, "Starting complete data dump...\n");
-    SEGGER_RTT_printf(0, "*** WARNING: Large data output ahead! ***\n");
-    R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_SECONDS); // 2초 대기
-    
+    // Final data output for Python processing
+    SEGGER_RTT_printf(0, "\nStarting data output for Python processing...\n");
+    R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_SECONDS);
     dump_all_collected_data();
-
-    SEGGER_RTT_printf(0, "\n=== COLLECTION COMPLETE ===\n");
-    SEGGER_RTT_printf(0, "Total callbacks: %lu\n", g_data_callback_count);
-    SEGGER_RTT_printf(0, "Total samples collected: %lu\n", g_total_collected_samples);
-    SEGGER_RTT_printf(0, "Errors encountered: %lu\n", g_error_count);
-    SEGGER_RTT_printf(0, "Collection efficiency: %.1f%%\n", 
-                     (double)g_total_collected_samples * 100.0f / 
-                     (g_data_callback_count * PDM_CALLBACK_NUM_SAMPLES));
+    
+    SEGGER_RTT_printf(0, "\n=== ALL TASKS COMPLETED ===\n");
 }
