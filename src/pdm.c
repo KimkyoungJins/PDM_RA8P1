@@ -27,11 +27,8 @@ uint32_t g_pdm0_buffer[PDM_BUFFER_NUM_SAMPLES];
 static uint32_t g_sound_detection_count = 0;
 static uint32_t g_data_callback_count = 0; 
 static uint32_t g_error_count = 0;
-static uint32_t g_total_samples_saved = 0;
-
 
 // Function declarations
-void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number);
 void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count);
 void dump_all_collected_data(void);
 void analyze_audio_data(uint32_t *buffer, uint32_t sample_count);
@@ -74,7 +71,7 @@ void r_pdm_basic_messaging_core0_example(void)
     }
 
     SEGGER_RTT_printf(0, "Recording started! (10 seconds)\n");
-    SEGGER_RTT_printf(0, "Progress: ");
+    SEGGER_RTT_printf(0, "Progress.... ");
 
     // EXACTLY 10 seconds wait
     R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_SECONDS);
@@ -118,10 +115,6 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             // CRITICAL: Only fast data collection!
             collect_all_audio_data(g_pdm0_buffer, PDM_CALLBACK_NUM_SAMPLES);
             
-            // REMOVED: No real-time text output (causes callback delay)
-            // REMOVED: No complex analysis in callback (causes timing issues)
-
-            // Minimal progress indication - ONLY every 100 callbacks (6.4 seconds)
             if (g_data_callback_count % 100 == 0)
             {
                 SEGGER_RTT_printf(0, ".");
@@ -142,8 +135,6 @@ void pdm0_callback(pdm_callback_args_t * p_args)
             break;
     }
 }
-
-
 
 // Collect all audio data into large buffer
 void collect_all_audio_data(uint32_t *buffer, uint32_t sample_count)
@@ -178,6 +169,8 @@ void dump_all_collected_data(void)
     SEGGER_RTT_printf(0, "\n");
     
     SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT START ***\n");
+    SEGGER_RTT_printf(0, " ");
+
 
     for (uint32_t i = 0; i < g_total_collected_samples; i++)
     {
@@ -198,14 +191,6 @@ void dump_all_collected_data(void)
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
-
-        // Progress indicator for large data
-        if ((i + 1) % 16000 == 0)
-        {
-            SEGGER_RTT_printf(0, "\n... Progress: %lu / %lu samples (%d%%) ...\n",
-                             i + 1, g_total_collected_samples, 
-                             (int)((i + 1) * 100 / g_total_collected_samples));
-        }
     }
 
     SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT END ***\n");
@@ -217,35 +202,4 @@ void dump_all_collected_data(void)
     }
     SEGGER_RTT_printf(0, "\n");
 }
-
-
-// Legacy function (simplified)
-void save_audio_data_as_text(uint32_t *buffer, uint32_t sample_count, uint32_t callback_number)
-{
-    if (!ENABLE_AUDIO_TEXT_OUTPUT) return;
-    if (callback_number % AUDIO_OUTPUT_INTERVAL != 0) return;
-    
-    SEGGER_RTT_printf(0, "\n=== AUDIO DATA CALLBACK #%lu ===\n", callback_number);
-    
-    // Show only first 32 samples for real-time output (performance optimization)
-    uint32_t display_count = (sample_count > 32) ? 32 : sample_count;
-    
-    for (uint32_t i = 0; i < display_count; i++)
-    {
-        if (i % SAMPLES_PER_LINE == 0)
-        {
-            SEGGER_RTT_printf(0, "\nS[%04lu]: ", i);
-        }
-        SEGGER_RTT_printf(0, "%08lX ", buffer[i]);
-    }
-    
-    if (sample_count > 32)
-    {
-        SEGGER_RTT_printf(0, "\n... (showing first 32 of %lu samples)", sample_count);
-    }
-    
-    SEGGER_RTT_printf(0, "\n=== END CALLBACK DATA ===\n\n");
-    g_total_samples_saved += sample_count;
-}
-
 
