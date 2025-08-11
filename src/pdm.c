@@ -180,10 +180,10 @@ void dump_all_collected_data(void)
             SEGGER_RTT_printf(0, "\n");
         }
         // Space every 8 samples for readability
-        else if (i % 8 == 0 && i > 0)
-        {
-            SEGGER_RTT_printf(0, "  ");
-        }
+        // else if (i % 8 == 0 && i > 0)
+        // {
+        //     SEGGER_RTT_printf(0, "  ");
+        // }
         
         // Add space before data (except first)
         if (i > 0) {
@@ -191,6 +191,7 @@ void dump_all_collected_data(void)
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
+
     }
 
     SEGGER_RTT_printf(0, "\n*** PURE DATA OUTPUT END ***\n");
