@@ -875,7 +875,7 @@ FSP Configuration
     
   Module "PDM (r_pdm)"
     Parameter Checking: Enabled
-    DMAC Support: Enabled
+    DMAC Support: Disabled
     
   Module "Transfer (r_dmac)"
     Parameter Checking: Default (BSP)

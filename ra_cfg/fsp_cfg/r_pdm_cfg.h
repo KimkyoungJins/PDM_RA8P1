@@ -6,7 +6,7 @@
             #endif
 
 #define PDM_CFG_PARAM_CHECKING_ENABLE (1)
-#define PDM_CFG_DMAC_ENABLE (1)
+#define PDM_CFG_DMAC_ENABLE (0)
 
 #ifdef __cplusplus
             }

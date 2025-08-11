@@ -510,7 +510,7 @@
     </config>
     <config id="config.driver.pdm">
       <property id="config.driver.pdm.param_checking_enable" value="config.driver.pdm.param_checking_enable.enabled"/>
-      <property id="config.driver.pdm.dmac_enable" value="config.driver.pdm.dmac_enable.enabled"/>
+      <property id="config.driver.pdm.dmac_enable" value="config.driver.pdm.dmac_enable.disabled"/>
     </config>
   </raModuleConfiguration>
   <raPinConfiguration>

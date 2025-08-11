@@ -50,8 +50,7 @@ ra/fsp/src/r_pdm/r_pdm.o: ../ra/fsp/src/r_pdm/r_pdm.c \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_delay.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_mcu_api.h \
   /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_pdm_cfg.h \
-  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h
+  /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_pdm_cfg.h
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_pdm.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_pdm_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/bsp_api.h:
@@ -104,4 +103,3 @@ bsp_linker_info.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/../../src/bsp/mcu/all/bsp_mcu_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/api/r_transfer_api.h:
 /Users/kim_kyoungkun/Desktop/technonia/PDM/ra_cfg/fsp_cfg/r_pdm_cfg.h:
-/Users/kim_kyoungkun/Desktop/technonia/PDM/ra/fsp/inc/instances/r_dmac.h:
