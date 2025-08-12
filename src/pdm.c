@@ -63,6 +63,9 @@ void r_pdm_basic_messaging_core0_example(void)
 
     R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
 
+    R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_MILLISECONDS);
+
+
     /* PDM start */
     err = R_PDM_Start(&g_pdm0_ctrl, g_pdm0_buffer, sizeof(g_pdm0_buffer), PDM_CALLBACK_NUM_SAMPLES);
     if (FSP_SUCCESS != err) {
@@ -179,18 +182,13 @@ void dump_all_collected_data(void)
         {
             SEGGER_RTT_printf(0, "\n");
         }
-        // Space every 8 samples for readability
-        // else if (i % 8 == 0 && i > 0)
-        // {
-        //     SEGGER_RTT_printf(0, "  ");
-        // }
-        
-        // Add space before data (except first)
+
         if (i > 0) {
             SEGGER_RTT_printf(0, " ");
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
+        R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_MILLISECONDS);
 
     }
 
