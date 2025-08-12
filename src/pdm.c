@@ -4,8 +4,8 @@
 #define PDM_BUFFER_NUM_SAMPLES 4096
 #define PDM_CALLBACK_NUM_SAMPLES 1024
 #define PDM_MIC_STARTUP_TIME_US 35000 
-#define PDM_SDE_UPPER_LIMIT (uint32_t)10000  
-#define PDM_SDE_LOWER_LIMIT (uint32_t)-10000 
+#define PDM_SDE_UPPER_LIMIT 5000
+#define PDM_SDE_LOWER_LIMIT 0xFFF80000
 #define PDM0_FILTER_SETTLING_TIME_US (25000U)
 
 // Text output settings
@@ -61,13 +61,14 @@ void r_pdm_basic_messaging_core0_example(void)
         .sound_detection_upper_limit = PDM_SDE_UPPER_LIMIT
     };
 
-    R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
+//    R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
 
     R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_MILLISECONDS);
 
 
     /* PDM start */
     err = R_PDM_Start(&g_pdm0_ctrl, g_pdm0_buffer, sizeof(g_pdm0_buffer), PDM_CALLBACK_NUM_SAMPLES);
+
     if (FSP_SUCCESS != err) {
         SEGGER_RTT_printf(0, "PDM Start FAILED: 0x%X\n", err);
         return;
@@ -188,6 +189,10 @@ void dump_all_collected_data(void)
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
+//        SEGGER_RTT_printf(0, "%08ulX", g_all_audio_data[i]);
+//        이렇게 찍으니까  00000020lX 이러한 형식으로 데이터가 나옴.
+
+
         R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_MILLISECONDS);
 
     }

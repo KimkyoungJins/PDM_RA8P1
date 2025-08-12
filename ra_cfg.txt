@@ -893,8 +893,8 @@ FSP Configuration
       Name: g_pdm0
       Channel: 2
       Input: Edge: Rising
-      Input: PDM_CLK Frequency: 4000000 Hz
-      Output: Bit Format: 20 Bits mode {1 Sign bit  and [18:0] bits of the buffer}
+      Input: PDM_CLK Frequency: 2000000 Hz
+      Output: Bit Format: 16 Bits mode {1 Sign bit  and [14:0] bits of the buffer}
       Output: Target Sampling Frequency (Hz): 16000
       Filter: Moving Average Mode: 1-order (filter is skipped)
       Filter: Low-pass Filter: Low-pass Filter Input Shift: No shift
@@ -947,9 +947,9 @@ FSP Configuration
       Overvoltage Detection: Overvoltage Detection Upper Limit Enable: Disabled
       Overvoltage Detection: Overvoltage Detection Upper Limit: 8000
       Interrupt: Callback: pdm0_callback
-      Interrupt: Sound Detection Interrupt Priority: Priority 1
-      Interrupt: Data Reception Interrupt Priority: Priority 2
-      Interrupt: Error Detection Interrupt Priority: Priority 3
+      Interrupt: Sound Detection Interrupt Priority: Priority 10
+      Interrupt: Data Reception Interrupt Priority: Priority 0 (highest)
+      Interrupt: Error Detection Interrupt Priority: Priority 1
       
     Instance "g_transfer0 Transfer (r_dmac) PDM DAT2 (Data reception interrupt channel 2)"
       Name: g_transfer0

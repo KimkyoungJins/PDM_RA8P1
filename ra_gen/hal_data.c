@@ -31,7 +31,7 @@ pdm_instance_ctrl_t g_pdm0_ctrl;
 
 /** PDM instance configuration */
 const pdm_extended_cfg_t g_pdm0_cfg_extend =
-{ .clock_div = PDM_CLOCK_DIV_2,
+{ .clock_div = PDM_CLOCK_DIV_4,
 
   /** Function Settings. */
   .short_circuit_detection_enable = PDM_SHORT_CIRCUIT_DISABLED,
@@ -91,7 +91,7 @@ const pdm_extended_cfg_t g_pdm0_cfg_extend =
 
 /** PDM interface configuration */
 const pdm_cfg_t g_pdm0_cfg =
-{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_20_BITS_0_18, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
+{ .unit = 0, .channel = 2, .pcm_width = PDM_PCM_WIDTH_16_BITS_0_14, .pcm_edge = PDM_INPUT_DATA_EDGE_RISE,
 
 #define RA_NOT_DEFINED (1)
 #if (RA_NOT_DEFINED == RA_NOT_DEFINED)
@@ -108,21 +108,21 @@ const pdm_cfg_t g_pdm0_cfg =
 #else
   .sdet_irq = FSP_INVALID_VECTOR,
 #endif
-  .sdet_ipl = (1),
+  .sdet_ipl = (10),
 
 #if defined(VECTOR_NUMBER_PDM_DAT2)
                 .dat_irq                               = PDM_DAT2_IRQn,
 #else
   .dat_irq = FSP_INVALID_VECTOR,
 #endif
-  .dat_ipl = (2),
+  .dat_ipl = (0),
 
 #if defined(VECTOR_NUMBER_PDM_ERR2)
                 .err_irq                               = PDM_ERR2_IRQn,
 #else
   .err_irq = FSP_INVALID_VECTOR,
 #endif
-  .err_ipl = (3), };
+  .err_ipl = (1), };
 
 /* Instance structure to use this module. */
 const pdm_instance_t g_pdm0 =

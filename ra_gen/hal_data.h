@@ -19,8 +19,8 @@ extern const transfer_cfg_t g_transfer0_cfg;
 #ifndef NULL
 void NULL(transfer_callback_args_t *p_args);
 #endif
-#define PDM2_CALCULATED_SINCRNG_VALUE (1)
-#define PDM2_CALCULATED_SINCDEC_VALUE (249)
+#define PDM2_CALCULATED_SINCRNG_VALUE (5)
+#define PDM2_CALCULATED_SINCDEC_VALUE (124)
 #define PDM2_FILTER_SETTLING_TIME_US  (3319)
 
 /** PDM Instance. */

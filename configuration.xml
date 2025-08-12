@@ -422,8 +422,8 @@
       <property id="module.driver.pdm.name" value="g_pdm0"/>
       <property id="module.driver.pdm.channel" value="2"/>
       <property id="module.driver.pdm.edge" value="module.driver.pdm.egde.pdm_egde_rise"/>
-      <property id="module.driver.pdm.clock_div" value="module.driver.pdm.clock_div.pdm_clock_div_2"/>
-      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width_20bits_0_18"/>
+      <property id="module.driver.pdm.clock_div" value="module.driver.pdm.clock_div.pdm_clock_div_4"/>
+      <property id="module.driver.pdm.pcm_width" value="module.driver.pdm.pcm_width_16bits_0_14"/>
       <property id="module.driver.pdm.pdm_output_sampling_freq" value="16000"/>
       <property id="module.driver.pdm.moving_average_mode" value="module.driver.pdm.moving_average_mode.order_1"/>
       <property id="module.driver.pdm.lpf_shift" value="module.driver.pdm.lpf_shift.shift_0"/>
@@ -476,9 +476,9 @@
       <property id="module.driver.pdm.overvoltage_detection_upper_limit_error" value="module.driver.pdm.overvoltage_detection_upper_limit_error.overvoltage_detection_upper_limit_error_disabled"/>
       <property id="module.driver.pdm.overvoltage_detection_upper_limit" value="8000"/>
       <property id="module.driver.pdm.callback" value="pdm0_callback"/>
-      <property id="module.driver.pdm.sdet_ipl" value="board.icu.common.irq.priority1"/>
-      <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority2"/>
-      <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority3"/>
+      <property id="module.driver.pdm.sdet_ipl" value="board.icu.common.irq.priority10"/>
+      <property id="module.driver.pdm.dat_ipl" value="board.icu.common.irq.priority0"/>
+      <property id="module.driver.pdm.err_ipl" value="board.icu.common.irq.priority1"/>
     </module>
     <module id="module.driver.transfer_on_dmac.731762218">
       <property id="module.driver.transfer.name" value="g_transfer0"/>
