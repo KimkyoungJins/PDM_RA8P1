@@ -19,9 +19,12 @@ extern const transfer_cfg_t g_transfer0_cfg;
 #ifndef NULL
 void NULL(transfer_callback_args_t *p_args);
 #endif
-#define PDM2_CALCULATED_SINCRNG_VALUE (5)
-#define PDM2_CALCULATED_SINCDEC_VALUE (124)
-#define PDM2_FILTER_SETTLING_TIME_US  (3319)
+/* Sinc Decimation ratio has been rounded to the nearest integer.
+ * Target Sampling Frequency: 32000 Hz
+ * Actual Sampling Frequency: 32258 Hz */
+#define PDM2_CALCULATED_SINCRNG_VALUE (9)
+#define PDM2_CALCULATED_SINCDEC_VALUE (62)
+#define PDM2_FILTER_SETTLING_TIME_US  (1676)
 
 /** PDM Instance. */
 extern const pdm_instance_t g_pdm0;

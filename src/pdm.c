@@ -55,13 +55,6 @@ void r_pdm_basic_messaging_core0_example(void)
     R_BSP_SoftwareDelay(PDM0_FILTER_SETTLING_TIME_US + PDM_MIC_STARTUP_TIME_US,
                         BSP_DELAY_UNITS_MICROSECONDS);
 
-    /* Sound detection enable */
-//    pdm_sound_detection_setting_t sound_detection_setting = {
-//        .sound_detection_lower_limit = PDM_SDE_LOWER_LIMIT,
-//        .sound_detection_upper_limit = PDM_SDE_UPPER_LIMIT
-//    };
-
-//    R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
 
     R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_MILLISECONDS);
 
