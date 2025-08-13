@@ -184,7 +184,7 @@ void dump_all_collected_data(void)
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
 
 
-        R_BSP_SoftwareDelay(5, BSP_DELAY_UNITS_MILLISECONDS);
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MILLISECONDS);
 
     }
 
