@@ -8,7 +8,7 @@
 #define PDM_SDE_LOWER_LIMIT 0xFFF80000
 #define PDM0_FILTER_SETTLING_TIME_US (25000U)
 
-// Text output settings
+// Text output setting
 #define ENABLE_AUDIO_TEXT_OUTPUT 1      
 #define AUDIO_OUTPUT_INTERVAL 10        
 #define SAMPLES_PER_LINE 8              
@@ -56,10 +56,10 @@ void r_pdm_basic_messaging_core0_example(void)
                         BSP_DELAY_UNITS_MICROSECONDS);
 
     /* Sound detection enable */
-    pdm_sound_detection_setting_t sound_detection_setting = {
-        .sound_detection_lower_limit = PDM_SDE_LOWER_LIMIT,
-        .sound_detection_upper_limit = PDM_SDE_UPPER_LIMIT
-    };
+//    pdm_sound_detection_setting_t sound_detection_setting = {
+//        .sound_detection_lower_limit = PDM_SDE_LOWER_LIMIT,
+//        .sound_detection_upper_limit = PDM_SDE_UPPER_LIMIT
+//    };
 
 //    R_PDM_SoundDetectionEnable(&g_pdm0_ctrl, sound_detection_setting);
 
@@ -189,8 +189,6 @@ void dump_all_collected_data(void)
         }
 
         SEGGER_RTT_printf(0, "%08lX", g_all_audio_data[i]);
-//        SEGGER_RTT_printf(0, "%08ulX", g_all_audio_data[i]);
-//        이렇게 찍으니까  00000020lX 이러한 형식으로 데이터가 나옴.
 
 
         R_BSP_SoftwareDelay(10, BSP_DELAY_UNITS_MILLISECONDS);
